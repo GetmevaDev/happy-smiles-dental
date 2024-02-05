@@ -1,0 +1,39 @@
+// header.module.scss
+
+.header_inner {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1480px;
+  padding: 20px 0;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.fixed {
+  position: fixed;
+  background-color: white;
+  border-radius: 0px, 0px, 30px, 30px;
+  box-shadow: 0px 16.5px 30px 0px #3131311a;
+}
+
+.slideIn {
+  animation: slideIn 0.3s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

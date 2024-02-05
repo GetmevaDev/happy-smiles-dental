@@ -1,0 +1,86 @@
+.appointment {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--font-general);
+  font-size: 82px;
+  font-weight: 600;
+  line-height: 91px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+.description {
+  font-family: var(--font-mont);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  padding-bottom: 55px;
+}
+
+.make {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.bg_phone {
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #b2802f 0%, #fec260 100%);
+  border-image-slice: 1;
+  height: 55px;
+  border-radius: 10px;
+}
+
+.bg_phone_inner {
+  width: 45px;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  background: linear-gradient(180deg, #ffdf60 0%, rgba(255, 223, 96, 0) 100%);
+}
+
+.phone {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.number {
+  font-family: var(--font-mont);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #000000;
+}
+
+.call {
+  font-family: var(--font-general);
+  font-size: 14px;
+  color: var(--main-color);
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
