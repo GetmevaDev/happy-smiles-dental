@@ -5,7 +5,7 @@ import classNames from "classnames";
 import Image from "next/image";
 
 type ChooseCardProps = {
-  color: string;
+  color?: string;
 };
 
 export const ChooseCard: FC<ChooseCardProps> = ({ color }) => {
