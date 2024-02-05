@@ -1,4 +1,4 @@
-import { Appointment, Block, Choose } from "@/components";
+import { Appointment, Block, Choose, Slider } from "@/components";
 
 export default function Page() {
   return (
@@ -6,6 +6,7 @@ export default function Page() {
       <Appointment />
       <Block />
       <Choose />
+      <Slider />
     </main>
   );
 }
