@@ -1,20 +1,17 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { SwiperButtonNext } from "@/ui/swiper/buttons/next/next";
-import { SwiperButtonPrev } from "@/ui/swiper/buttons/prev/prev";
 
 import styles from "./Slider.module.scss";
 import { SliderCard } from "./SliderCard/SliderCard";
 
 export const Slider = () => {
-  const swiper = useSwiper();
+  const swiperRef = useRef();
 
   return (
     <div className={styles.slider}>
@@ -32,45 +29,26 @@ export const Slider = () => {
           }}
           className="mySwiper"
           modules={[Navigation]}
-          navigation={{
-            nextEl: styles.button_next,
-            prevEl: styles.button_prev,
-          }}
           slidesPerView={1}
           spaceBetween={30}
         >
+          <SwiperSlide>
+            <SliderCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderCard />
+          </SwiperSlide>
+
           <div className={styles.buttons}>
-            <SwiperButtonPrev>
-              <Image
-                alt="arrow-left"
-                height={20}
-                src="/left-arrow.svg"
-                width={8}
-              />
-            </SwiperButtonPrev>
-
-            <SwiperButtonNext>
-              <Image
-                alt="arrow-right"
-                height={20}
-                src="/right-arrow.svg"
-                width={8}
-              />
-            </SwiperButtonNext>
+            <button className={styles.prev}>Prev</button>
+            <button className={styles.next}>Next</button>
           </div>
-
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderCard />
-          </SwiperSlide>
         </Swiper>
       </div>
     </div>

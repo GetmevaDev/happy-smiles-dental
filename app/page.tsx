@@ -5,8 +5,8 @@ export default function Page() {
     <main>
       <Appointment />
       <Block />
-      <Choose />
       <Slider />
+      <Choose />
     </main>
   );
 }
