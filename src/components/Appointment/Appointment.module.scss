@@ -1,7 +1,9 @@
 .appointment {
-  margin-top: 200px;
   display: flex;
+  max-width: 1280px;
+  margin: 200px auto 70px;
   justify-content: space-between;
+  gap: 50px;
 }
 
 .title {

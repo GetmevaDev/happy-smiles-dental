@@ -1,6 +1,6 @@
 import { Layout } from "@/ui";
 import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
+import { Montserrat, Nunito_Sans } from "next/font/google";
 
 import "../src/styles/globals.scss";
 
@@ -11,11 +11,11 @@ export const mont = Montserrat({
   variable: "--font-mont",
 });
 
-export const poppins = Poppins({
+export const nunito = Nunito_Sans({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-nunito",
 });
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${mont.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${mont.variable} ${nunito.variable}`}>
       <body>
         <Layout.Header />
         <div className="container">{children}</div>
