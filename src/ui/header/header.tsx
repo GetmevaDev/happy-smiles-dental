@@ -1,11 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
 
-import styles from "./header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+
 import { ROUTES } from "@/utils/constants";
+
 import { Menu } from "../menu/menu";
+
+import styles from "./header.module.scss";
 
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -30,7 +33,7 @@ export const Header = () => {
     >
       <div className={styles.header_inner}>
         <Link href={ROUTES.ROOT}>
-          <Image width={295} height={117} alt="logo" src="/logo.svg" />
+          <Image alt="logo" height={117} src="/logo.svg" width={295} />
         </Link>
 
         <div>

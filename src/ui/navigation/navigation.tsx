@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import { IoChevronDownOutline } from "react-icons/io5";
-import { IoChevronUpOutline } from "react-icons/io5";
-import styles from "./navigation.module.scss";
 import Link from "next/link";
-import { navigation } from "@/utils/constants";
 import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 
-type subMenuItem = {
+import { navigation } from "@/utils/constants";
+
+import styles from "./navigation.module.scss";
+
+type SubMenuItem = {
   label: string;
   path: string;
 };
 
 interface SubMenuProps {
-  subMenu: subMenuItem[];
+  subMenu: SubMenuItem[];
   id: string;
   activeSubMenu: string;
 }
@@ -31,10 +32,10 @@ export const Navigation = () => {
       {subMenu?.map((subMenuItem) => (
         <li key={subMenuItem.label} className={styles.sub_menu_item}>
           <Link
-            href={subMenuItem.path}
             className={
               pathname === subMenuItem?.path ? styles.active : styles.link
             }
+            href={subMenuItem.path}
           >
             {subMenuItem.label}
           </Link>
@@ -46,7 +47,7 @@ export const Navigation = () => {
   return (
     <ul className={styles.menu_inner}>
       {navigation.map((item) => (
-        <li className={styles.menu_item} key={item.id}>
+        <li key={item.id} className={styles.menu_item}>
           <Link
             className={
               pathname === item?.path ? styles.active : styles.menu_link
@@ -66,7 +67,7 @@ export const Navigation = () => {
               </div>
             )}
           </div>
-          {item?.subMenu?.length > 0 && renderSubMenu(item?.subMenu, item.id)}
+          {/* {item?.subMenu?.length > 0 && renderSubMenu(item?.subMenu, item.id)} */}
         </li>
       ))}
     </ul>

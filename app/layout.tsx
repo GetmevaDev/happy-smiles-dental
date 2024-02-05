@@ -1,6 +1,7 @@
-import { Layout } from "@/ui";
 import type { Metadata } from "next";
 import { Montserrat, Nunito_Sans } from "next/font/google";
+
+import { Layout } from "@/ui";
 
 import "../src/styles/globals.scss";
 
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${mont.variable} ${nunito.variable}`}>
+    <html className={`${mont.variable} ${nunito.variable}`} lang="en">
       <body>
         <Layout.Header />
         <div className="container">{children}</div>

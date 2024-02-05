@@ -1,5 +1,3 @@
 import React from "react";
 
-export const ClinicGallery = () => {
-  return <div>ClinicGallery</div>;
-};
+export const ClinicGallery = () => <div>ClinicGallery</div>;

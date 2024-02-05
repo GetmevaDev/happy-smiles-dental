@@ -31,6 +31,9 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-misused-promises": 0,
     "no-underscore-dangle": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 1,
+    "import/no-cycle": 0,
     "react-hooks/exhaustive-deps": 0,
     "@typescript-eslint/no-floating-promises": 0,
     "@typescript-eslint/no-shadow": 0,
@@ -41,7 +44,7 @@ module.exports = {
     "react/function-component-definition": [
       2,
       {
-        namedComponents: "arrow-function",
+        namedComponents: ["arrow-function", "function-declaration"],
         unnamedComponents: "arrow-function",
       },
     ],
@@ -64,16 +67,7 @@ module.exports = {
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
-    "react/jsx-sort-props": [
-      2,
-      {
-        callbacksLast: true,
-        shorthandFirst: true,
-        multiline: "last",
-        ignoreCase: true,
-        reservedFirst: true,
-      },
-    ],
+    "react/jsx-sort-props": [1],
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,

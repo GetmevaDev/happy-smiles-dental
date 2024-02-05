@@ -1,11 +1,14 @@
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
-import styles from "./menu.module.scss";
 import { ROUTES } from "@/utils/constants";
-import Link from "next/link";
+
 import { Button } from "../button/button";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+
+import styles from "./menu.module.scss";
+
 
 export const Menu = () => {
   const [activeSubMenu, setActiveSubMenu] = useState(null);
@@ -16,7 +19,7 @@ export const Menu = () => {
       <div className={styles.top}>
         <div className={styles.info}>
           <div className={styles.info_inner}>
-            <Image width={30} height={38} alt="time" src="/time.svg" />
+            <Image alt="time" height={38} src="/time.svg" width={30} />
           </div>
 
           <div className={styles.info_text}>

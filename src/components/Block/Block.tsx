@@ -1,13 +1,12 @@
+import Image from "next/image";
 import React from "react";
 
 import styles from "./Block.module.scss";
-import Image from "next/image";
 
-export const Block = () => {
-  return (
+export const Block = () => (
     <div className={styles.banner}>
       <div className={styles.banner_inner}>
-        <Image width={387} height={394} alt="tooth" src="/tooth-1.png" />
+        <Image alt="tooth" height={394} src="/tooth-1.png" width={387} />
 
         <div className={styles.block}>
           <h2 className={styles.title}>Welcome to Happy Smiles Dental</h2>
@@ -29,4 +28,3 @@ export const Block = () => {
       </div>
     </div>
   );
-};

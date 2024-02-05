@@ -1,5 +1,6 @@
-import React, { ComponentPropsWithRef, FC, ReactNode } from "react";
 import classnames from "classnames";
+import type { ComponentPropsWithRef, FC, ReactNode } from "react";
+import React from "react";
 
 import styles from "./button.module.scss";
 
@@ -21,7 +22,7 @@ export const Button: FC<ButtonProps> = ({
   const classes = classnames(styles.button, className);
 
   return (
-    <button type={type} className={classes} {...props}>
+    <button className={classes} type={type} {...props}>
       {children}
     </button>
   );

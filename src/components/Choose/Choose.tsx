@@ -3,8 +3,7 @@ import React from "react";
 import styles from "./Choose.module.scss";
 import { ChooseCard } from "./ChooseCard/ChooseCard";
 
-export const Choose = () => {
-  return (
+export const Choose = () => (
     <div className={styles.choose}>
       <div className={styles.choose_inner}>
         <h2 className={styles.title}>Why choose Happy Smiles Dental?</h2>
@@ -27,4 +26,3 @@ export const Choose = () => {
       </div>
     </div>
   );
-};

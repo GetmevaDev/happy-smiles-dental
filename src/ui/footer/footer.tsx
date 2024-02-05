@@ -1,13 +1,17 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-import styles from "./footer.module.scss";
+import { ROUTES } from "@/utils/constants";
+
 import { Menu } from "../menu/menu";
 import { Navigation } from "../navigation/navigation";
-import Link from "next/link";
-import { ROUTES } from "@/utils/constants";
-import Image from "next/image";
+
+import styles from "./footer.module.scss";
+
+
 
 export const Footer = () => {
   const year = new Date().getFullYear();
@@ -17,20 +21,20 @@ export const Footer = () => {
       <div className={styles.border} />
       <div className={styles.top}>
         <div className={styles.logo}>
-          <Image width={180} height={72} alt="logo" src="/logo.svg" />
+          <Image alt="logo" height={72} src="/logo.svg" width={180} />
 
           <div className={styles.copyright}>
             ©Copyright {year}.<br /> All rights reserved
           </div>
         </div>
         <div className={styles.social}>
-          <Image width={32} height={32} src="/facebook.svg" alt="facebook" />
-          <Image width={32} height={32} src="/instagram.svg" alt="instagramm" />
+          <Image alt="facebook" height={32} src="/facebook.svg" width={32} />
+          <Image alt="instagramm" height={32} src="/instagram.svg" width={32} />
         </div>
 
         <div className={styles.meva}>
           <Link href="https://meva.app/">
-            <Image width={130} height={28} src="/meva.png" alt="meva" />
+            <Image alt="meva" height={28} src="/meva.png" width={130} />
           </Link>
           <div className={styles.by}>
             Powered by{" "}
@@ -42,11 +46,11 @@ export const Footer = () => {
 
         <div className={styles.rating}>
           <div className={styles.stars}>
-            <Image width={18} height={18} src="/star.svg" alt="star" />
-            <Image width={18} height={18} src="/star.svg" alt="star" />
-            <Image width={18} height={18} src="/star.svg" alt="star" />
-            <Image width={18} height={18} src="/star.svg" alt="star" />
-            <Image width={18} height={18} src="/star.svg" alt="star" />
+            <Image alt="star" height={18} src="/star.svg" width={18} />
+            <Image alt="star" height={18} src="/star.svg" width={18} />
+            <Image alt="star" height={18} src="/star.svg" width={18} />
+            <Image alt="star" height={18} src="/star.svg" width={18} />
+            <Image alt="star" height={18} src="/star.svg" width={18} />
           </div>
           <div className={styles.star_info}>Rating 5/5 (120 reviews)</div>
         </div>
@@ -56,7 +60,7 @@ export const Footer = () => {
       <div className={styles.bottom}>
         <Navigation />
 
-        <Link href={ROUTES.TERMS_OF_SERVICE} className={styles.terms}>
+        <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>
           Terms of Service
         </Link>
       </div>

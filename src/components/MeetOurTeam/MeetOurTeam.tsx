@@ -1,5 +1,3 @@
 import React from "react";
 
-export const MeetOurTeam = () => {
-  return <div>MeetOurTeam</div>;
-};
+export const MeetOurTeam = () => <div>MeetOurTeam</div>;

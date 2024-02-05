@@ -1,11 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
-import styles from "./Appointment.module.scss";
-import Image from "next/image";
 import { Button } from "@/ui/button/button";
 
-export const Appointment = () => {
-  return (
+import styles from "./Appointment.module.scss";
+
+export const Appointment = () => (
     <div className={styles.appointment}>
       <div className={styles.info}>
         <h1 className={styles.title}>Happy Smiles Dental In New Hyde Park</h1>
@@ -21,12 +21,12 @@ export const Appointment = () => {
           <div className={styles.phone}>
             <div className={styles.bg_phone}>
               <div className={styles.bg_phone_inner}>
-                <Image alt="phone" width={24} height={24} src="/phone.svg" />
+                <Image alt="phone" height={24} src="/phone.svg" width={24} />
               </div>
             </div>
 
             <div className={styles.text}>
-              <a href="tel:516-354-7551" className={styles.call}>
+              <a className={styles.call} href="tel:516-354-7551">
                 Click to call
               </a>
               <div className={styles.number}>516-354-7551</div>
@@ -35,7 +35,6 @@ export const Appointment = () => {
         </div>
       </div>
 
-      <Image src="/tooth.png" alt="tooth" width={501} height={502} />
+      <Image alt="tooth" height={502} src="/tooth.png" width={501} />
     </div>
   );
-};

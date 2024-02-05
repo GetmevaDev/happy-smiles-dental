@@ -1,5 +1,3 @@
 import React from "react";
 
-export const Slider = () => {
-  return <div>Slider</div>;
-};
+export const Slider = () => <div>Slider</div>;
