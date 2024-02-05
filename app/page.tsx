@@ -1,4 +1,4 @@
-import { Appointment, Block, Choose, Slider } from "@/components";
+import { Appointment, Block, Choose, OurServices, Slider } from "@/components";
 import { LeaveFom } from "@/components/LeaveFom/LeaveFom";
 
 export default function Page() {
@@ -8,6 +8,7 @@ export default function Page() {
       <Block />
       <Slider />
       <Choose />
+      <OurServices />
       <LeaveFom />
     </main>
   );
