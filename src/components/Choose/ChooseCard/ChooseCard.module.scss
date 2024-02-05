@@ -1,0 +1,31 @@
+.choose_card {
+  box-shadow: 0px 16.5px 30px 0px #3131311a;
+  background: #dca264;
+  font-family: var(--font-mont);
+  padding: 50px 40px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 30px 0 20px;
+  letter-spacing: 0.015em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #ffffff;
+  letter-spacing: 0.015em;
+  text-align: center;
+}

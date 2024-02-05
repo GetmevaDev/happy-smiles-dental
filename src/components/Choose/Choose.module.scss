@@ -1,0 +1,32 @@
+.choose {
+  max-width: 1280px;
+  margin: 0 auto 100px;
+}
+
+.title {
+  font-family: var(--font-general);
+  font-size: 60px;
+  font-weight: 600;
+  color: #000000;
+  padding-bottom: 30px;
+  line-height: 75px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.description {
+  font-family: var(--font-mont);
+  font-size: 18px;
+  font-weight: 400;
+  color: #2a2a2a;
+  padding-bottom: 50px;
+  line-height: 28px;
+  letter-spacing: 0.015em;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
