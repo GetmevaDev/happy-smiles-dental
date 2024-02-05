@@ -1,3 +1,9 @@
 import React from "react";
 
-export const LeaveFom = () => <div>LeaveFom</div>;
+import { Rating } from "@/ui/rating/rating";
+
+export const LeaveFom = () => (
+  <div>
+    <Rating />
+  </div>
+);

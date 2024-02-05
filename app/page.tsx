@@ -1,4 +1,5 @@
 import { Appointment, Block, Choose, Slider } from "@/components";
+import { LeaveFom } from "@/components/LeaveFom/LeaveFom";
 
 export default function Page() {
   return (
@@ -7,6 +8,7 @@ export default function Page() {
       <Block />
       <Slider />
       <Choose />
+      <LeaveFom />
     </main>
   );
 }
