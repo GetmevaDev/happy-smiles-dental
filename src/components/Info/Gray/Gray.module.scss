@@ -27,3 +27,9 @@
   letter-spacing: 0.015em;
   text-align: left;
 }
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
