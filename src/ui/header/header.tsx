@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
-import { ROUTES } from "@/utils/constants";
+import { ROUTES } from '@/utils/constants';
 
-import { Menu } from "../menu/menu";
+import { Menu } from '../menu/menu';
 
-import styles from "./header.module.scss";
+import styles from './header.module.scss';
 
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -19,21 +19,21 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <header
       className={`${styles.header} ${
-        scrollPosition > 50 ? `${styles.fixed} ${styles.slideIn}` : ""
+        scrollPosition > 50 ? `${styles.fixed} ${styles.slideIn}` : ''
       }`}
     >
       <div className={styles.header_inner}>
         <Link href={ROUTES.ROOT}>
-          <Image alt="logo" height={117} src="/logo.svg" width={295} />
+          <Image alt='logo' height={117} src='/logo.svg' width={295} />
         </Link>
 
         <div>

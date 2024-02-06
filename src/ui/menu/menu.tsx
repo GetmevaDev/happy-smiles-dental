@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { useState } from 'react';
 
-import { ROUTES } from "@/utils/constants";
+import { ROUTES } from '@/utils/constants';
 
-import { Button } from "../button/button";
+import { Button } from '../button/button';
+import { Navigation } from '../navigation/navigation';
 
-import styles from "./menu.module.scss";
-
+import styles from './menu.module.scss';
 
 export const Menu = () => {
   const [activeSubMenu, setActiveSubMenu] = useState(null);
@@ -19,7 +19,7 @@ export const Menu = () => {
       <div className={styles.top}>
         <div className={styles.info}>
           <div className={styles.info_inner}>
-            <Image alt="time" height={38} src="/time.svg" width={30} />
+            <Image alt='time' height={38} src='/time.svg' width={30} />
           </div>
 
           <div className={styles.info_text}>
@@ -37,6 +37,8 @@ export const Menu = () => {
       </div>
 
       <div className={styles.border} />
+
+      <Navigation />
     </nav>
   );
 };

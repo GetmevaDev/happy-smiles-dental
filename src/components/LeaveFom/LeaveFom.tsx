@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Rating } from "@/ui/rating/rating";
+import { Rating } from '@/ui/rating/rating';
 
 export const LeaveFom = () => (
-  <div>
+  <section>
     <Rating />
-  </div>
+  </section>
 );

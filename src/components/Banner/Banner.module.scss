@@ -1,0 +1,23 @@
+.section {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.image_inner {
+  position: relative;
+}
+
+.image {
+  border-radius: 20px;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+}
