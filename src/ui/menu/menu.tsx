@@ -32,7 +32,7 @@ export const Menu = () => {
 
         <div className={styles.buttons}>
           <Button>Click to call</Button>
-          <Button>Make an appointment</Button>
+          <Button className={styles.btn}>Make an appointment</Button>
         </div>
       </div>
 
