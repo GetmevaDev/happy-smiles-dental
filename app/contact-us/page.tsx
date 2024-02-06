@@ -1,3 +1,9 @@
+import { Banner } from '@/components';
+
 export default function Page() {
-  return <h1>Hello, resources Page!</h1>;
+  return (
+    <main>
+      <Banner subTitle='Get in touch' title='Contact Us' />
+    </main>
+  );
 }
