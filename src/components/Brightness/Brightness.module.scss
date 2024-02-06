@@ -23,3 +23,29 @@
   letter-spacing: 0.015em;
   text-align: left;
 }
+
+.background_right {
+  position: relative;
+
+  .image_inner {
+    img {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    width: 340px;
+    top: 80%;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 340px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
