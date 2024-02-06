@@ -24,3 +24,10 @@
   letter-spacing: 0.015em;
   text-align: left;
 }
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
