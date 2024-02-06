@@ -1,0 +1,11 @@
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 0;
+
+  iframe {
+    border-radius: 15px;
+  }
+}
