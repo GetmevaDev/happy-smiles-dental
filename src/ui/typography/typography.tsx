@@ -5,6 +5,7 @@ import React from 'react';
 import styles from './typography.module.scss';
 
 const sizes = {
+  mini: styles.mini,
   small: styles.small,
   default: styles.default,
   medium: styles.medium,

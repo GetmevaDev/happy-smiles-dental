@@ -1,11 +1,17 @@
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
 
 import { Typography } from '@/ui';
+import { Button } from '@/ui/button/button';
 
 import styles from './Gray.module.scss';
 
-export const Gray = () => (
+interface GrayProps {
+  button?: boolean;
+}
+
+export const Gray: FC<GrayProps> = ({ button }) => (
   <section className={styles.section}>
     <div className={styles.block}>
       <div className={styles.left}>
@@ -27,6 +33,8 @@ export const Gray = () => (
           the teeth, and then a specially-designed light is applied to them, which activates the gel
           and gently breaks down tough stains while effectively whitening.
         </div>
+
+        {button && <Button className={styles.btn}>Learn more</Button>}
       </div>
     </div>
   </section>
