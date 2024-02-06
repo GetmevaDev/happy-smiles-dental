@@ -7,3 +7,4 @@ export * from './Banner/Banner';
 export * from './Brightness/Brightness';
 export * from './Info/Info';
 export * from './InsurancesAccept/InsurancesAccept';
+export * from './Form/Form';

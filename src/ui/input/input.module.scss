@@ -1,0 +1,23 @@
+.input {
+  border: 1px solid #c7c7c7;
+  height: 56px;
+  font-family: var(--font-mont);
+  padding: 5px;
+  border-radius: 10px;
+
+  margin-bottom: 22px;
+}
+
+.label {
+  font-family: var(--font-mont);
+  color: #555555;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+}
