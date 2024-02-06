@@ -8,3 +8,4 @@ export * from './Brightness/Brightness';
 export * from './Info/Info';
 export * from './InsurancesAccept/InsurancesAccept';
 export * from './Form/Form';
+export * from './Review/Review';
