@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Banner, Brightness } from '@/components';
+import { Banner, Brightness, Info } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Technology'
@@ -11,6 +11,7 @@ export default function Page() {
     <main>
       <Banner title='Technology' />
       <Brightness />
+      <Info />
     </main>
   );
 }
