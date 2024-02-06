@@ -1,9 +1,14 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import React from 'react';
 
-import { Map, Typography } from '@/ui';
+import { Typography } from '@/ui';
 
 import styles from './WorkingHours.module.scss';
+
+const Map = dynamic(() => import('../../ui/map/map'), {
+  loading: () => <p>Loading...</p>
+});
 
 export const WorkingHours = () => (
   <div className={styles.section}>
