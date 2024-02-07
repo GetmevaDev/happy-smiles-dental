@@ -13,7 +13,7 @@ export default function Page() {
       <Banner subTitle='What People Say' title='Testimonials' />
       <LeaveReview />
       <div className='padding'>
-        <Slider />
+        <Slider cards={[]} title='Testimonials' />
       </div>
       <Video />
     </main>
