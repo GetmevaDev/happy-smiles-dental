@@ -9,10 +9,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import type { SliderCardI } from '@/types/home-page';
+
 import styles from './Slider.module.scss';
 import { SliderCard } from './SliderCard/SliderCard';
 
-export const Slider: FC<{ title?: string }> = ({ title }) => {
+export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, cards }) => {
   const swiperRef = useRef();
 
   return (
@@ -36,18 +38,11 @@ export const Slider: FC<{ title?: string }> = ({ title }) => {
             slidesPerView={1}
             spaceBetween={30}
           >
-            <SwiperSlide>
-              <SliderCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SliderCard />
-            </SwiperSlide>
+            {cards.map((card) => (
+              <SwiperSlide key={card.id}>
+                <SliderCard {...card} />
+              </SwiperSlide>
+            ))}
 
             <div className={styles.buttons}>
               <button className={styles.prev}>Prev</button>

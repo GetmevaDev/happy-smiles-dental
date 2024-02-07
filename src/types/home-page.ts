@@ -14,7 +14,7 @@ export interface HomePageI {
   Banner: Banner;
   Slider: Slider;
   ChooseBlock: ChooseBlock;
-  OurServices: OurService[];
+  OurServices: OurServiceI[];
 }
 
 export interface Banner {
@@ -27,10 +27,10 @@ export interface Banner {
 export interface Slider {
   id: number;
   title: string;
-  SliderCard: SliderCard[];
+  SliderCard: SliderCardI[];
 }
 
-export interface SliderCard {
+export interface SliderCardI {
   id: number;
   title: string;
   description: string;
@@ -48,10 +48,10 @@ export interface ChooseBlock {
   id: number;
   title: string;
   description: string;
-  ChooseBlockCard: Banner[];
+  ChooseBlockCard: ChooseCardI[];
 }
 
-export interface OurService {
+export interface OurServiceI {
   id: number;
   name_service: string;
   Service: Service[];
@@ -60,4 +60,11 @@ export interface OurService {
 export interface Service {
   id: number;
   title: string;
+}
+
+export interface ChooseCardI {
+  id: number;
+  title: string;
+  description: string;
+  image: Images;
 }

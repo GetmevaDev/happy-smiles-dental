@@ -21,9 +21,13 @@ export default async function Page() {
         image={data?.attributes?.Banner?.image?.data?.attributes?.url}
         title={data?.attributes?.Banner?.title}
       />
-      <Slider title='What people say' />
-      <Choose />
-      <OurServices />
+      <Slider cards={data?.attributes?.Slider.SliderCard} title={data?.attributes?.Slider?.title} />
+      <Choose
+        cards={data?.attributes.ChooseBlock?.ChooseBlockCard}
+        description={data?.attributes.ChooseBlock?.description}
+        title={data?.attributes.ChooseBlock?.title}
+      />
+      <OurServices services={data?.attributes?.OurServices} title='Our services' />
       <LeaveForm />
     </main>
   );

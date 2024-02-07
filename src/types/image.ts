@@ -3,10 +3,10 @@ export interface Images {
 }
 
 export interface ImageAttributes {
-  attributes: Image;
+  attributes: ImageI;
 }
 
-export interface Image {
+export interface ImageI {
   name: string;
   alternativeText: string;
   caption: string;

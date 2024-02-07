@@ -2,13 +2,21 @@
   box-shadow: 0px 16.5px 30px 0px #3131311a;
   background: #dca264;
   font-family: var(--font-mont);
-  padding: 50px 40px;
+  padding: 50px 35px;
   border-radius: 15px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &:nth-child(2) {
+    background: #c38848;
+  }
+
+  &:nth-child(3) {
+    background: #a56f35;
+  }
 }
 
 .text {
