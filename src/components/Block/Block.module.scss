@@ -14,8 +14,8 @@
   position: relative;
   z-index: 1;
   &:after {
-    content: "";
-    background-image: url("/lines.png");
+    content: '';
+    background-image: url('/lines.png');
     width: 100%;
     position: absolute;
     top: 50%;
@@ -51,4 +51,8 @@
   line-height: 26px;
   letter-spacing: 0.015em;
   text-align: left;
+}
+
+.description + .description {
+  padding-top: 10px;
 }
