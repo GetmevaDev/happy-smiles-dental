@@ -28,12 +28,31 @@ export function AccordionItem({
     }
   }, [isOpen]);
 
+  const iconClass = `${styles.icon} ${isOpen ? styles.rotate : ''}`;
+
   return (
     <li className={`${styles.accordionItem} ${isOpen ? styles.active : ''}`}>
       <h2 className={styles.accordionItemTitle}>
         <button className={styles.accordionItemBtn} onClick={btnOnClick}>
           {data.title}
         </button>
+
+        <div>
+          <svg
+            className={iconClass}
+            fill='none'
+            height='24'
+            stroke='#DCA264'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth='2'
+            viewBox='0 0 24 24'
+            width='24'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <polyline points='6 9 12 15 18 9' />
+          </svg>
+        </div>
       </h2>
       <div className={styles.accordionItemContainer} style={{ height }}>
         <div ref={contentRef} className={styles.accordionItemContent}>
