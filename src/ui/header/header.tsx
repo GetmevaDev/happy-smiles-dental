@@ -2,15 +2,21 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
 
+import type { NavigationData, NavigationItem } from '@/types/navigation';
 import { ROUTES } from '@/utils/constants';
 
 import { Menu } from '../menu/menu';
 
 import styles from './header.module.scss';
 
-export const Header = () => {
+interface HeaderProps {
+  data: NavigationData[];
+}
+
+export const Header: FC<HeaderProps> = ({ data }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -37,7 +43,7 @@ export const Header = () => {
         </Link>
 
         <div>
-          <Menu />
+          <Menu data={data} />
         </div>
       </div>
     </header>

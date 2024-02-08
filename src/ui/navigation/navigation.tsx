@@ -1,11 +1,13 @@
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState } from "react";
-import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import type { FC } from 'react';
+import React, { useState } from 'react';
+import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
 
-import { navigation } from "@/utils/constants";
+import type { NavigationData } from '@/types/navigation';
+import { navigation } from '@/utils/constants';
 
-import styles from "./navigation.module.scss";
+import styles from './navigation.module.scss';
 
 type SubMenuItem = {
   label: string;
@@ -18,23 +20,21 @@ interface SubMenuProps {
   activeSubMenu: string;
 }
 
-export const Navigation = () => {
+interface NavigationProps {
+  data: NavigationData[];
+}
+
+export const Navigation: FC<NavigationProps> = ({ data }) => {
   const [activeSubMenu, setActiveSubMenu] = useState(null);
 
   const pathname = usePathname();
 
   const renderSubMenu = ({ subMenu, id }: SubMenuProps) => (
-    <ul
-      className={`${styles.sub_menu} ${
-        activeSubMenu === id ? styles.sub_menu_active : ""
-      }`}
-    >
+    <ul className={`${styles.sub_menu} ${activeSubMenu === id ? styles.sub_menu_active : ''}`}>
       {subMenu?.map((subMenuItem) => (
         <li key={subMenuItem.label} className={styles.sub_menu_item}>
           <Link
-            className={
-              pathname === subMenuItem?.path ? styles.active : styles.link
-            }
+            className={pathname === subMenuItem?.path ? styles.active : styles.link}
             href={subMenuItem.path}
           >
             {subMenuItem.label}
@@ -46,18 +46,16 @@ export const Navigation = () => {
 
   return (
     <ul className={styles.menu_inner}>
-      {navigation.map((item) => (
+      {data?.map((item) => (
         <li key={item.id} className={styles.menu_item}>
           <Link
-            className={
-              pathname === item?.path ? styles.active : styles.menu_link
-            }
-            href={item.path}
+            className={pathname === item?.attributes.slug ? styles.active : styles.menu_link}
+            href={item.attributes.slug ? item.attributes.slug : '/'}
           >
-            {item.title}
+            {item.attributes.title}
           </Link>
           <div>
-            {item?.icon && (
+            {item?.attributes.icon && (
               <div>
                 {activeSubMenu === item.id ? (
                   <IoChevronDownOutline className={styles.icon} />

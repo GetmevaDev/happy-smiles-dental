@@ -1,12 +1,10 @@
 import { Appointment, Block, Choose, OurServices, Slider } from '@/components';
 import { LeaveForm } from '@/components/LeaveForm/LeaveForm';
-import type { HomePageI, RootHomePageI } from '@/types/home-page';
+import type { RootHomePageI } from '@/types/home-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
 
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
-
-  console.log(data, 'data');
 
   return (
     <main>

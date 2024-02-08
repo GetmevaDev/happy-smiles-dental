@@ -1,9 +1,17 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Technology'
-};
+import { Banner } from '@/components';
+import { Faq } from '@/components/Faq/Faq';
+import { Accordion } from '@/ui';
+import { fetchAPI } from '@/utils/api/fetchApi';
 
 export default function Page() {
-  return <main>slug</main>;
+  // const { data } = await fetchAPI<any>('home-page');
+
+  return (
+    <main>
+      <Banner subTitle='Our Services' title='Home Care Instructions' />
+      <Faq />
+    </main>
+  );
 }
