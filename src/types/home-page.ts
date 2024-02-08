@@ -60,6 +60,7 @@ export interface OurServiceI {
 export interface Service {
   id: number;
   title: string;
+  service: ServiceSlug;
 }
 
 export interface ChooseCardI {
@@ -67,4 +68,12 @@ export interface ChooseCardI {
   title: string;
   description: string;
   image: Images;
+}
+
+export interface ServiceSlug {
+  data: {
+    attributes: {
+      slug: string;
+    };
+  };
 }

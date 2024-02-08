@@ -1,0 +1,30 @@
+.service {
+  padding-bottom: 100px;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 30px;
+}
+
+.left {
+  padding-right: 30px;
+  border-right: 1px solid #c7c7c7;
+}
+
+.sub_title {
+  font-family: var(--font-mont);
+  color: #878787;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0.015em;
+  text-align: left;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+}

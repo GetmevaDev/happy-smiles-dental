@@ -1,3 +1,9 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .card {
   border-radius: 15px;
   background: #fff;
@@ -5,6 +11,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  color: #000;
   box-shadow: 0px 16.5px 30px 0px #3131311a;
 
   transition:
@@ -21,9 +28,7 @@
       background-color: #ffffff33;
     }
 
-    .link {
-      color: #fff;
-    }
+    color: #fff;
 
     .second {
       background: linear-gradient(
@@ -33,6 +38,11 @@
       );
     }
   }
+}
+
+.card_active {
+  color: #fff;
+  background: var(--main-color);
 }
 
 .link {
