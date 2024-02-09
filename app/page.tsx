@@ -6,8 +6,6 @@ import { fetchAPI } from '@/utils/api/fetchApi';
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
 
-  console.log(data, ' home');
-
   return (
     <main>
       <Appointment

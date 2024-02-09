@@ -5,7 +5,6 @@ import type { OurServiceI } from '@/types/home-page';
 import { Typography } from '@/ui';
 
 import { OurService } from './OurService/OurService';
-import { OurServiceCard } from './OurServiceCard/OurServiceCard';
 import styles from './OurServices.module.scss';
 
 interface OurServicesProps {

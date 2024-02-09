@@ -20,7 +20,7 @@ export const ServiceBlockColumn: FC<{ services: DataService[] }> = ({ services }
         <Link
           className={classNames(
             styles.card,
-            slug === service.attributes.slug ? styles.card_active : styles.card_unactive
+            slug === service?.attributes?.slug ? styles.card_active : styles.card_unactive
           )}
           href={service.attributes.slug}
         >

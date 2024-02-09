@@ -60,7 +60,14 @@ export interface OurServiceI {
 export interface Service {
   id: number;
   title: string;
-  service: ServiceSlug;
+  service: {
+    data: {
+      id: number;
+      attributes: {
+        slug: string;
+      };
+    };
+  };
 }
 
 export interface ChooseCardI {

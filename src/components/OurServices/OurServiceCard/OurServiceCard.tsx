@@ -18,7 +18,7 @@ export const OurServiceCard: FC<MenuItem> = ({ title, slug }) => (
     <div className={styles.first} />
     <div className={styles.second} />
     <div className={styles.text}>
-      <Link className={styles.link} href={slug}>
+      <Link className={styles.link} href={slug || '/'}>
         {title}
       </Link>
     </div>
