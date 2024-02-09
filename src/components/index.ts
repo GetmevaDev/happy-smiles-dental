@@ -10,3 +10,4 @@ export * from './InsurancesAccept/InsurancesAccept';
 export * from './Form/Form';
 export * from './Review/Review';
 export * from './Video/Video';
+export * from './SmileClub/SmileClub';

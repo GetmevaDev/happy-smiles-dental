@@ -12,9 +12,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <main>
-      <Banner subTitle={data.attributes.banner.subTitle} title={data.attributes.banner.title} />
+      <Banner
+        subTitle={data?.attributes?.banner?.subTitle}
+        title={data?.attributes?.banner?.title}
+      />
 
-      <ServiceBlock categories={categories.data} services={services.data} />
+      <ServiceBlock categories={categories?.data} services={services?.data} />
       <Faq />
     </main>
   );

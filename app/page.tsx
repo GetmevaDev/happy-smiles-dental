@@ -21,9 +21,9 @@ export default async function Page() {
       />
       <Slider cards={data?.attributes?.Slider.SliderCard} title={data?.attributes?.Slider?.title} />
       <Choose
-        cards={data?.attributes.ChooseBlock?.ChooseBlockCard}
-        description={data?.attributes.ChooseBlock?.description}
-        title={data?.attributes.ChooseBlock?.title}
+        cards={data?.attributes?.ChooseBlock?.ChooseBlockCard}
+        description={data?.attributes?.ChooseBlock?.description}
+        title={data?.attributes?.ChooseBlock?.title}
       />
       <OurServices services={data?.attributes?.OurServices} title='Our services' />
       <LeaveForm />
