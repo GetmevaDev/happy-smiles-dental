@@ -8,6 +8,12 @@
   display: flex;
   align-items: center;
   gap: 3px;
+  position: relative;
+
+  &:hover .sub_menu {
+    display: block;
+    max-height: 500px;
+  }
 }
 
 .menu_link {
@@ -37,4 +43,39 @@
 
   text-align: left;
   color: var(--main-color);
+}
+
+.sub_menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  margin: 0;
+  list-style-type: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+
+  .sub_menu_item {
+    a {
+      padding: 10px;
+      display: block;
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+.icon {
+  transition: transform 0.3s ease-out;
+  &.rotate {
+    transform: rotate(180deg);
+  }
 }

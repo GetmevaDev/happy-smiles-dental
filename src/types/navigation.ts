@@ -1,14 +1,39 @@
-export interface NavigationI {
+import type { ServiceCategory } from './service-page';
+
+export interface RooutObjectNavigation {
   data: NavigationData[];
 }
 
 export interface NavigationData {
-  attributes: NavigationItem;
+  attributes: Attributes;
   id: number;
 }
 
-export interface NavigationItem {
+export interface Attributes {
   title: string;
   slug: string;
-  icon?: boolean;
+  menu: NavigationMenu;
+  icon: boolean;
+}
+
+export interface NavigationMenu {
+  id: number;
+  services: NavigationMenuServices;
+  name: string;
+  link: string;
+}
+
+export interface NavigationMenuServices {
+  data: NavigationMenuService[];
+}
+
+export interface NavigationMenuService {
+  id: number;
+  attributes: {
+    banner: {
+      title: string;
+    };
+    service_category: ServiceCategory;
+    slug: string;
+  };
 }

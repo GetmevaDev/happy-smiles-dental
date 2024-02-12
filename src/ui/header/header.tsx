@@ -5,7 +5,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
 
-import type { NavigationData, NavigationItem } from '@/types/navigation';
+import type { NavigationData } from '@/types/navigation';
 import { ROUTES } from '@/utils/constants';
 
 import { Menu } from '../menu/menu';

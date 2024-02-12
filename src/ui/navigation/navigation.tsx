@@ -4,21 +4,10 @@ import type { FC } from 'react';
 import React, { useState } from 'react';
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
 
-import type { NavigationData } from '@/types/navigation';
+import type { NavigationData, NavigationMenuService } from '@/types/navigation';
 import { navigation } from '@/utils/constants';
 
 import styles from './navigation.module.scss';
-
-type SubMenuItem = {
-  label: string;
-  path: string;
-};
-
-interface SubMenuProps {
-  subMenu: SubMenuItem[];
-  id: string;
-  activeSubMenu: string;
-}
 
 interface NavigationProps {
   data: NavigationData[];
@@ -29,15 +18,17 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
 
   const pathname = usePathname();
 
-  const renderSubMenu = ({ subMenu, id }: SubMenuProps) => (
+  const renderSubMenu = (menu: NavigationMenuService[], id: number) => (
     <ul className={`${styles.sub_menu} ${activeSubMenu === id ? styles.sub_menu_active : ''}`}>
-      {subMenu?.map((subMenuItem) => (
-        <li key={subMenuItem.label} className={styles.sub_menu_item}>
+      {menu.map((subMenuItem) => (
+        <li key={subMenuItem.id} className={styles.sub_menu_item}>
           <Link
-            className={pathname === subMenuItem?.path ? styles.active : styles.link}
-            href={subMenuItem.path}
+            className={
+              pathname === subMenuItem.attributes.banner.title ? styles.active : styles.link
+            }
+            href={subMenuItem.attributes.slug}
           >
-            {subMenuItem.label}
+            {subMenuItem.attributes.banner.title}
           </Link>
         </li>
       ))}
@@ -46,28 +37,31 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
 
   return (
     <ul className={styles.menu_inner}>
-      {data?.map((item) => (
-        <li key={item.id} className={styles.menu_item}>
-          <Link
-            className={pathname === item?.attributes.slug ? styles.active : styles.menu_link}
-            href={item.attributes.slug ? item.attributes.slug : '/'}
-          >
-            {item.attributes.title}
-          </Link>
-          <div>
-            {item?.attributes.icon && (
-              <div>
-                {activeSubMenu === item.id ? (
-                  <IoChevronDownOutline className={styles.icon} />
-                ) : (
-                  <IoChevronUpOutline />
-                )}
-              </div>
-            )}
-          </div>
-          {/* {item?.subMenu?.length > 0 && renderSubMenu(item?.subMenu, item.id)} */}
-        </li>
-      ))}
+      {data
+        ?.sort((a, b) => a.id - b.id)
+        .map((item) => (
+          <li key={item.id} className={styles.menu_item}>
+            <Link
+              className={pathname === item?.attributes.slug ? styles.active : styles.menu_link}
+              href={item.attributes.slug ? item.attributes.slug : '/'}
+            >
+              {item.attributes.title}
+            </Link>
+            <div>
+              {item?.attributes && (
+                <div>
+                  {activeSubMenu === item.id ? (
+                    <IoChevronDownOutline className={styles.icon} />
+                  ) : (
+                    <IoChevronUpOutline />
+                  )}
+                </div>
+              )}
+            </div>
+            {item?.attributes?.menu?.services?.data.length > 0 &&
+              renderSubMenu(item?.attributes?.menu?.services?.data, item.id)}
+          </li>
+        ))}
     </ul>
   );
 };
