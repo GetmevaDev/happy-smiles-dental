@@ -3,6 +3,7 @@ import React from 'react';
 
 import type { Category, DataService, ServiceCategory } from '@/types/service-page';
 
+import { AvailableDoctors } from './AvailableDoctors/AvailableDoctors';
 import styles from './ServiceBlock.module.scss';
 import { ServiceBlockColumn } from './ServiceBlockColumn/ServiceBlockColumn';
 import { ServiceBlockContent } from './ServiceBlockContent/ServiceBlockContent';
@@ -36,6 +37,7 @@ export const ServiceBlock: FC<ServiceBlockProps> = ({ services, categories, cont
       </div>
       <div className={styles.right}>
         <ServiceBlockContent content={content} />
+        <AvailableDoctors />
       </div>
     </section>
   );

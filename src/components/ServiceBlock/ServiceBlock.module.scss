@@ -4,13 +4,25 @@
   margin: 0 auto;
 
   display: flex;
+  align-items: flex-start;
   gap: 30px;
 }
 
 .left {
   padding-right: 30px;
-  border-right: 1px solid #c7c7c7;
   flex: 1;
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #c7c7c7;
+  }
 }
 
 .right {
