@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .cards {
   gap: 20px;
 }
@@ -20,4 +22,16 @@
   line-height: 39px;
   padding: 30px 0;
   letter-spacing: 0.015em;
+}
+
+@media (max-width: $smDesktopWidth) {
+  .row {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: $phoneWidth) {
+  .row {
+    grid-template-columns: auto;
+  }
 }

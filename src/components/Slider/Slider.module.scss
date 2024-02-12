@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .slider {
   position: relative;
   z-index: 1;
@@ -50,4 +52,7 @@
   background: transparent;
   cursor: pointer;
   outline: none;
+}
+
+@media (max-width: $tableWidth) {
 }

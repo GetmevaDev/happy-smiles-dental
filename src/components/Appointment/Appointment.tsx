@@ -45,7 +45,7 @@ export const Appointment: FC<AppointmentProps> = ({ title, description, image, p
         </div>
       </div>
 
-      <Image alt='tooth' height={502} src={image} width={501} />
+      <Image alt='tooth' className={styles.image} height={502} src={image} width={501} />
     </section>
   );
 };

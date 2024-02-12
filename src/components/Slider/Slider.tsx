@@ -29,6 +29,9 @@ export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, ca
               600: {
                 slidesPerView: 2
               },
+              300: {
+                slidesPerView: 1
+              },
               900: {
                 slidesPerView: 3
               }

@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .card {
   border-radius: 15px;
   background: #fff;
@@ -74,4 +76,7 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
+}
+
+@media (max-width: $phoneWidth) {
 }

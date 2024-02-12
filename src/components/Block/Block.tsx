@@ -15,7 +15,7 @@ interface BlockProps {
 export const Block: FC<BlockProps> = ({ title, description, image }) => (
   <section className={styles.banner}>
     <div className={styles.banner_inner}>
-      <Image alt='tooth' height={394} src={image} width={387} />
+      <Image alt='tooth' className={styles.image} height={394} src={image} width={387} />
 
       <div className={styles.block}>
         <h2 className={styles.title}>{title}</h2>

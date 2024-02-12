@@ -19,7 +19,7 @@ export default async function Page() {
         image={data?.attributes?.Banner?.image?.data?.attributes?.url}
         title={data?.attributes?.Banner?.title}
       />
-      <Slider cards={data?.attributes?.Slider.SliderCard} title={data?.attributes?.Slider?.title} />
+      {/* <Slider cards={data?.attributes?.Slider.SliderCard} title={data?.attributes?.Slider?.title} /> */}
       <Choose
         cards={data?.attributes?.ChooseBlock?.ChooseBlockCard}
         description={data?.attributes?.ChooseBlock?.description}
