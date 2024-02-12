@@ -1,10 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import type { ClinicAward } from '@/types/about-us-page';
 import { Typography } from '@/ui';
 
 import 'swiper/css';
@@ -12,7 +14,7 @@ import 'swiper/css/navigation';
 
 import styles from './Awards.module.scss';
 
-export const Awards = () => (
+export const Awards: FC<{ title: string; cards: ClinicAward[] }> = ({ title, cards }) => (
   <div className={styles.gallery}>
     <div className={styles.gallery_inner}>
       <Typography className={styles.title} tag='h2'>
@@ -37,45 +39,21 @@ export const Awards = () => (
           slidesPerView={1}
           spaceBetween={30}
         >
-          <SwiperSlide>
-            <div className={styles.card}>
-              <Image
-                alt='image'
-                className={styles.image}
-                height={162}
-                src='/image 17.png'
-                width={162}
-              />
+          {cards.map((card) => (
+            <SwiperSlide key={card.id}>
+              <div className={styles.card}>
+                <Image
+                  alt='image'
+                  className={styles.image}
+                  height={162}
+                  src={card.image.data.attributes.url}
+                  width={162}
+                />
 
-              <div className={styles.text}>Lorem ipsum dolor sit amet.</div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className={styles.card}>
-              <Image
-                alt='image'
-                className={styles.image}
-                height={162}
-                src='/image 17.png'
-                width={162}
-              />
-              <div className={styles.text}>Lorem ipsum dolor sit amet.</div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className={styles.card}>
-              <Image
-                alt='image'
-                className={styles.image}
-                height={162}
-                src='/image 17.png'
-                width={162}
-              />
-              <div className={styles.text}>Lorem ipsum dolor sit amet.</div>
-            </div>
-          </SwiperSlide>
+                <div className={styles.text}>{card.text}.</div>
+              </div>
+            </SwiperSlide>
+          ))}
 
           <div className={styles.buttons}>
             <button className={styles.prev}>Prev</button>

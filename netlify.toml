@@ -2,3 +2,6 @@
   command = "npm run build"
   publish = ".next"
 
+[[plugins]]
+# netlify nextjs plugin that helps nextjs ISR and SSR and API routes, etc
+package = "@netlify/plugin-nextjs"

@@ -10,6 +10,7 @@
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.41.3",
     "framer-motion": "^11.0.3",
     "gsap": "^3.12.5",
     "markdown-it": "^14.0.0",

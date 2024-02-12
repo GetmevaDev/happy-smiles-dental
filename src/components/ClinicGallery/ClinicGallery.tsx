@@ -1,10 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import type { Image as ClinicImage } from '@/types/about-us-page';
 import { Typography } from '@/ui';
 
 import 'swiper/css';
@@ -12,7 +14,7 @@ import 'swiper/css/navigation';
 
 import styles from './ClinicGallery.module.scss';
 
-export const ClinicGallery = () => (
+export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => (
   <div className={styles.gallery}>
     <div className={styles.gallery_inner}>
       <Typography className={styles.title} tag='h2'>
@@ -37,25 +39,17 @@ export const ClinicGallery = () => (
           slidesPerView={1}
           spaceBetween={30}
         >
-          <SwiperSlide>
-            <Image
-              alt='gallery'
-              className={styles.image}
-              height={400}
-              src='/gallery-1.png'
-              width={625}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <Image
-              alt='gallery1'
-              className={styles.image}
-              height={400}
-              src='/gallery-1.png'
-              width={625}
-            />
-          </SwiperSlide>
+          {images?.map((image) => (
+            <SwiperSlide key={image.id}>
+              <Image
+                alt='gallery'
+                className={styles.image}
+                height={400}
+                src={image.attributes.url}
+                width={625}
+              />
+            </SwiperSlide>
+          ))}
 
           <div className={styles.buttons}>
             <button className={styles.prev}>Prev</button>

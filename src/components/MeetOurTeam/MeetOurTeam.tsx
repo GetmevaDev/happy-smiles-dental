@@ -1,14 +1,19 @@
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
 
 import { Typography } from '@/ui';
 
 import styles from './MeetOurTeam.module.scss';
 
-export const MeetOurTeam = () => (
+export const MeetOurTeam: FC<{ title: string; doctorSpeciality: string; name: string }> = ({
+  title,
+  name,
+  doctorSpeciality
+}) => (
   <div className={styles.meet}>
     <Typography className={styles.title} tag='h2'>
-      Meet the Doctor
+      {title}
     </Typography>
 
     <div className={styles.card}>
@@ -17,8 +22,8 @@ export const MeetOurTeam = () => (
 
         <div className={styles.text}>
           <div className={styles.text_inner}>
-            <h4 className={styles.doctor}>Dr. Diana Gerov, DDS</h4>
-            <p className={styles.speciality}>Doctor of Dental Surgery</p>
+            <h4 className={styles.doctor}>{name}</h4>
+            <p className={styles.speciality}>{doctorSpeciality}</p>
           </div>
         </div>
       </div>
