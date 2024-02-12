@@ -2,19 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
 import React from 'react';
 
 import type { NavigationData } from '@/types/navigation';
 import { ROUTES } from '@/utils/constants';
 
-import { Menu } from '../menu/menu';
-import { Navigation } from '../navigation/navigation';
-
 import styles from './footer.module.scss';
 
 export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
 
   return (
     <footer className={styles.footer}>
@@ -58,7 +57,22 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
 
       <div className={styles.border} />
       <div className={styles.bottom}>
-        <Navigation data={data} />
+        <ul className={styles.menu}>
+          {data
+            .sort((a, b) => a.id - b.id)
+            .map((item) => (
+              <li key={item.id}>
+                <Link
+                  className={
+                    pathname === `${item.attributes.slug}` ? styles.active : styles.menu_link
+                  }
+                  href={item.attributes.slug || '/'}
+                >
+                  {item.attributes.title}
+                </Link>
+              </li>
+            ))}
+        </ul>
 
         <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>
           Terms of Service

@@ -48,7 +48,7 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
               {item.attributes.title}
             </Link>
             <div>
-              {item?.attributes && (
+              {item?.attributes.icon && (
                 <div>
                   {activeSubMenu === item.id ? (
                     <IoChevronDownOutline className={styles.icon} />

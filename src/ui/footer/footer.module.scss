@@ -108,3 +108,35 @@
   letter-spacing: 0px;
   text-align: left;
 }
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu_link {
+  font-family: var(--font-general);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.015em;
+  color: #000;
+  text-align: left;
+
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.active {
+  font-family: var(--font-general);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.015em;
+  text-align: left;
+  color: var(--main-color);
+}
