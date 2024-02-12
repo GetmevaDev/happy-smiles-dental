@@ -17,7 +17,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
         title={data?.attributes?.banner?.title}
       />
 
-      <ServiceBlock categories={categories?.data} services={services?.data} />
+      <ServiceBlock
+        categories={categories?.data}
+        content={data.attributes.content}
+        services={services?.data}
+      />
       <Faq />
     </main>
   );

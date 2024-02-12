@@ -1,12 +1,20 @@
-import Image from 'next/image';
+import MarkdownIt from 'markdown-it';
 import type { FC } from 'react';
 import React from 'react';
 
-export const ServiceBlockContent: FC<{ image?: string; content?: React.ReactNode }> = ({
-  image,
-  content
-}) => (
-  <div>
-    <Image alt='care' height={300} src='/care.png' width={806} />
-  </div>
-);
+import styles from './ServiceBlockContent.module.scss';
+
+interface ServiceBlockContentProps {
+  image?: string;
+  content?: string;
+}
+
+export const ServiceBlockContent: FC<ServiceBlockContentProps> = ({ image, content }) => {
+  const md = new MarkdownIt({
+    html: true
+  });
+
+  const htmlTitle = content ? md.render(content) : '';
+
+  return <div dangerouslySetInnerHTML={{ __html: htmlTitle }} className={styles.block} />;
+};

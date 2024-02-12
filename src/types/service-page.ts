@@ -13,6 +13,7 @@ export interface DataService {
 export interface ServicePageI {
   banner: BannerTop;
   Faq: Faq;
+  content: string;
   ForPatients: ForPatient[];
   slug: string;
   service_category: Categories;

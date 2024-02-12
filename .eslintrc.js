@@ -33,6 +33,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': 1,
+    'react/no-danger': 0,
     'import/no-cycle': 0,
     'react-hooks/exhaustive-deps': 0,
     '@typescript-eslint/no-floating-promises': 0,

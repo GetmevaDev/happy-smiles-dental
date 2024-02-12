@@ -10,6 +10,11 @@
 .left {
   padding-right: 30px;
   border-right: 1px solid #c7c7c7;
+  flex: 1;
+}
+
+.right {
+  flex: 2;
 }
 
 .sub_title {

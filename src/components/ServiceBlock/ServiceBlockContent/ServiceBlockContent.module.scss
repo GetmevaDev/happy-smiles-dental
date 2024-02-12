@@ -1,0 +1,45 @@
+.block {
+  font-family: var(--font-mont);
+
+  h3 {
+    font-family: var(--font-general);
+    color: #000;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0em;
+    padding: 30px 0;
+    text-align: left;
+  }
+
+  p {
+    padding-top: 20px;
+    color: #2a2a2a;
+
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.015em;
+    text-align: left;
+  }
+
+  strong {
+    color: var(--main-color);
+    font-weight: 600;
+  }
+
+  ul {
+    padding: 30px 0 0 0;
+    margin-left: 30px;
+    li {
+      list-style: disc;
+
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 50px;
+      color: #2a2a2a;
+      letter-spacing: 0.015em;
+      text-align: left;
+    }
+  }
+}

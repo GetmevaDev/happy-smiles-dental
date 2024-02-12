@@ -7,10 +7,13 @@ import styles from './ServiceBlock.module.scss';
 import { ServiceBlockColumn } from './ServiceBlockColumn/ServiceBlockColumn';
 import { ServiceBlockContent } from './ServiceBlockContent/ServiceBlockContent';
 
-export const ServiceBlock: FC<{ services: DataService[]; categories: ServiceCategory[] }> = ({
-  services,
-  categories
-}) => {
+interface ServiceBlockProps {
+  services: DataService[];
+  categories: ServiceCategory[];
+  content: string;
+}
+
+export const ServiceBlock: FC<ServiceBlockProps> = ({ services, categories, content }) => {
   const groupedServices = categories.reduce(
     (acc, category) => {
       acc[category.id] = services.filter(
@@ -32,7 +35,7 @@ export const ServiceBlock: FC<{ services: DataService[]; categories: ServiceCate
         ))}
       </div>
       <div className={styles.right}>
-        <ServiceBlockContent />
+        <ServiceBlockContent content={content} />
       </div>
     </section>
   );
