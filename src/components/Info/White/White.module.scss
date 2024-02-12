@@ -25,7 +25,14 @@
 }
 
 .right {
-  padding: 20px 100px;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  min-width: 480px;
+  justify-content: center;
   background: #efefef;
+}
+
+.image {
+  border-radius: 15px;
 }

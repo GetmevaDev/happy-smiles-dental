@@ -10,14 +10,16 @@ import styles from './Banner.module.scss';
 interface BannerProps {
   title?: string;
   subTitle?: string;
-  image: string;
+  image?: string;
   button?: boolean;
 }
 
 export const Banner: FC<BannerProps> = ({ title, subTitle, button, image }) => (
   <section className={styles.section}>
     <div className={styles.image_inner}>
-      <Image alt='banner' className={styles.image} height={400} src={image} width={1480} />
+      {image && (
+        <Image alt='banner' className={styles.image} height={400} src={image} width={1480} />
+      )}
       <div className={styles.container}>
         <div className={styles.titles}>
           <Typography size='mini' tag='h4'>

@@ -1,31 +1,42 @@
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
 
+import type { Image as ImageProps } from '@/types/about-us-page';
 import { Typography } from '@/ui';
 
 import styles from './White.module.scss';
 
-export const White = () => (
+interface WhiteProps {
+  title: string;
+  subTitle: string;
+  description: string;
+  image: {
+    data: ImageProps;
+  };
+}
+
+export const White: FC<WhiteProps> = ({ title, subTitle, description, image }) => (
   <section className={styles.section}>
     <div className={styles.left}>
       <Typography className={styles.title} size='medium' tag='h3'>
-        Unleash Your Brightness
+        {title}
       </Typography>
       <Typography className={styles.mini_title} size='small' tag='h4'>
-        Philips Zoom WhiteSpeed
+        {subTitle}
       </Typography>
 
-      <div className={styles.description}>
-        At Happy Smiles Dental, we offer the Zoom! system of chairside teeth whitening, a proven
-        safe and effective method for immediate change. In only a little over an hour, Dr. Gerov can
-        whiten your teeth by up to 8 shades lighter. With Zoom!, a whitening gel is applied to the
-        teeth, and then a specially-designed light is applied to them, which activates the gel and
-        gently breaks down tough stains while effectively whitening.
-      </div>
+      <div className={styles.description}>{description}</div>
     </div>
 
     <div className={styles.right}>
-      <Image alt='tooth' height={381} src='/time.png' width={280} />
+      <Image
+        alt='tooth'
+        className={styles.image}
+        height={image.data.attributes.height}
+        src={image.data.attributes.url}
+        width={image.data.attributes.width}
+      />
     </div>
   </section>
 );

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import React from 'react';
 
+import type { Image as ImageProps } from '@/types/about-us-page';
 import { Typography } from '@/ui';
 import { Button } from '@/ui/button/button';
 
@@ -9,30 +10,36 @@ import styles from './Gray.module.scss';
 
 interface GrayProps {
   button?: boolean;
+  title: string;
+  subTitle: string;
+  description: string;
+  image: {
+    data: ImageProps;
+  };
 }
 
-export const Gray: FC<GrayProps> = ({ button }) => (
+export const Gray: FC<GrayProps> = ({ button, title, subTitle, image, description }) => (
   <section className={styles.section}>
     <div className={styles.block}>
       <div className={styles.left}>
-        <Image alt='1' height={422} src='/1.png' width={422} />
+        <Image
+          alt='tooth'
+          className={styles.image}
+          height={image.data.attributes.height}
+          src={image.data.attributes.url}
+          width={image.data.attributes.width}
+        />
       </div>
 
       <div className={styles.right}>
         <Typography className={styles.title} size='medium' tag='h3'>
-          Pictures Speak Louder than Words
+          {title}
         </Typography>
         <Typography className={styles.mini_title} size='small' tag='h4'>
-          Intra- Oral Camera`s
+          {subTitle}
         </Typography>
 
-        <div className={styles.description}>
-          At Happy Smiles Dental, we offer the Zoom! system of chairside teeth whitening, a proven
-          safe and effective method for immediate change. In only a little over an hour, Dr. Gerov
-          can whiten your teeth by up to 8 shades lighter. With Zoom!, a whitening gel is applied to
-          the teeth, and then a specially-designed light is applied to them, which activates the gel
-          and gently breaks down tough stains while effectively whitening.
-        </div>
+        <div className={styles.description}>{description}</div>
 
         {button && <Button className={styles.btn}>Learn more</Button>}
       </div>
