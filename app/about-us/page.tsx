@@ -1,5 +1,8 @@
 import { Banner, Brightness } from '@/components';
+import { Awards } from '@/components/Awards/Awards';
+import { ClinicGallery } from '@/components/ClinicGallery/ClinicGallery';
 import { LeaveForm } from '@/components/LeaveForm/LeaveForm';
+import { MeetOurTeam } from '@/components/MeetOurTeam/MeetOurTeam';
 
 export default function Page() {
   return (
@@ -18,6 +21,12 @@ Dr. Diana Gerov practices the full scope of general and cosmetic dentistry. Her 
         title='A Beautiful Smile is a Happy Smile.'
         width={290}
       />
+
+      <Awards />
+
+      <MeetOurTeam />
+
+      <ClinicGallery />
 
       <LeaveForm />
     </main>
