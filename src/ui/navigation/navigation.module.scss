@@ -48,6 +48,7 @@
   position: absolute;
   left: 0;
   top: 100%;
+  z-index: 200;
   background-color: #fff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 5px 0;
@@ -75,5 +76,22 @@
   transition: transform 0.3s ease-out;
   &.rotate {
     transform: rotate(180deg);
+  }
+}
+
+.sub_menu_item {
+  font-family: var(--font-general);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.015em;
+  color: var(--dark-blue);
+
+  text-align: left;
+
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--main-color);
   }
 }

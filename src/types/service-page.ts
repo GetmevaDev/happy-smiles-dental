@@ -11,15 +11,15 @@ export interface DataService {
 }
 
 export interface ServicePageI {
-  banner: BannerTop;
+  title: string;
+  description: string;
+  bgImage: Images;
+  button: boolean;
   Faq: Faq;
   content: string;
   ForPatients: ForPatient[];
   slug: string;
   service_category: Categories;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
 }
 
 export interface Categories {

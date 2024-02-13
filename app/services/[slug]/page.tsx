@@ -13,13 +13,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <main>
       <Banner
-        subTitle={data?.attributes?.banner?.subTitle}
-        title={data?.attributes?.banner?.title}
+        image={data?.attributes?.bgImage?.data?.attributes?.url}
+        subTitle={data?.attributes?.description}
+        title={data?.attributes?.title}
       />
 
       <ServiceBlock
         categories={categories?.data}
-        content={data.attributes.content}
+        content={data?.attributes?.content}
         services={services?.data}
       />
       <Faq />

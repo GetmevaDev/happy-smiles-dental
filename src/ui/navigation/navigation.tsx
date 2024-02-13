@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import React, { useState } from 'react';
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
 
-import type { NavigationData, NavigationMenuService } from '@/types/navigation';
+import type { NavigationData, NavigationMenu, NavigationMenuService } from '@/types/navigation';
 import { navigation } from '@/utils/constants';
 
 import styles from './navigation.module.scss';
@@ -18,22 +18,31 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
 
   const pathname = usePathname();
 
-  const renderSubMenu = (menu: NavigationMenuService[], id: number) => (
-    <ul className={`${styles.sub_menu} ${activeSubMenu === id ? styles.sub_menu_active : ''}`}>
-      {menu.map((subMenuItem) => (
-        <li key={subMenuItem.id} className={styles.sub_menu_item}>
-          <Link
-            className={
-              pathname === subMenuItem.attributes.banner.title ? styles.active : styles.link
-            }
-            href={subMenuItem.attributes.slug}
-          >
-            {subMenuItem.attributes.banner.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  const renderSubMenu = (menu: NavigationMenu, id: number) => {
+    if (menu.services?.data.length > 0) {
+      return (
+        <ul className={`${styles.sub_menu} ${activeSubMenu === id ? styles.sub_menu_active : ''}`}>
+          {menu.services.data.map((service) => (
+            <li key={service.id} className={styles.sub_menu_item}>
+              <Link href={`services/${service.attributes.slug}`}>{service.attributes.title}</Link>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    if (menu.link && menu.name) {
+      return (
+        <ul className={styles.sub_menu}>
+          <li className={styles.sub_menu_item}>
+            <Link href={menu.link}>{menu.name}</Link>
+          </li>
+        </ul>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <ul className={styles.menu_inner}>
@@ -58,8 +67,8 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
                 </div>
               )}
             </div>
-            {item?.attributes?.menu?.services?.data.length > 0 &&
-              renderSubMenu(item?.attributes?.menu?.services?.data, item.id)}
+
+            {item?.attributes?.menu && renderSubMenu(item?.attributes?.menu, item.id)}
           </li>
         ))}
     </ul>

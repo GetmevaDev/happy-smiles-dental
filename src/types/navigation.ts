@@ -30,9 +30,7 @@ export interface NavigationMenuServices {
 export interface NavigationMenuService {
   id: number;
   attributes: {
-    banner: {
-      title: string;
-    };
+    title: string;
     service_category: ServiceCategory;
     slug: string;
   };

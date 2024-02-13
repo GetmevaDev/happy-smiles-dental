@@ -8,6 +8,7 @@ export default async function Page() {
   return (
     <main>
       <Banner
+        image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
         title={data?.attributes?.banner?.title}
       />

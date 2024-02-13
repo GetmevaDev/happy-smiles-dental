@@ -26,7 +26,7 @@ export const ServiceBlockColumn: FC<{ services: DataService[] }> = ({ services }
         >
           <div className={styles.first} />
           <div className={styles.second} />
-          <div className={styles.text}>{service.attributes.banner.title}</div>
+          <div className={styles.text}>{service?.attributes?.title}</div>
           <Image alt='arrow' height={30} src='/arrow.svg' width={30} />
         </Link>
       ))}

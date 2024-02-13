@@ -1,3 +1,4 @@
+import type { Image } from './about-us-page';
 import type { Images } from './image';
 import type { ContentBlock, RichBlockText } from './rich-block';
 
@@ -54,20 +55,29 @@ export interface ChooseBlock {
 export interface OurServiceI {
   id: number;
   name_service: string;
-  Service: Service[];
+  Service: Service;
 }
 
 export interface Service {
   id: number;
   title: string;
-  service: {
-    data: {
-      id: number;
-      attributes: {
-        slug: string;
-      };
-    };
+  services: {
+    data: OurServicesDataI[];
   };
+}
+
+export interface OurServicesDataI {
+  id: number;
+  attributes: OurServicesAttributes;
+}
+
+export interface OurServicesAttributes {
+  slug: string;
+  content: string;
+  title: string;
+  description: string;
+  bgImage: Image;
+  button: boolean;
 }
 
 export interface ChooseCardI {

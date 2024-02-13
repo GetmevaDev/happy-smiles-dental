@@ -1,7 +1,12 @@
 import type { FC } from 'react';
 import React from 'react';
 
-import type { OurServiceI } from '@/types/home-page';
+import type {
+  OurServiceI,
+  OurServicesAttributes,
+  OurServicesDataI,
+  Service
+} from '@/types/home-page';
 import { Typography } from '@/ui';
 
 import { OurService } from './OurService/OurService';
@@ -19,8 +24,12 @@ export const OurServices: FC<OurServicesProps> = ({ title, services }) => (
     </Typography>
 
     <div className={styles.cards}>
-      {services.map((service) => (
-        <OurService key={service.id} menu={service.Service} name={service.name_service} />
+      {services.map((item) => (
+        <OurService
+          key={item.id}
+          menu={item?.Service?.services?.data || []}
+          name={item.name_service}
+        />
       ))}
     </div>
   </section>
