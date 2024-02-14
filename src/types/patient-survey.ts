@@ -1,3 +1,4 @@
+import type { Seo } from './seo';
 import type { BannerTop } from './service-page';
 
 export interface PatientSurveyRoot {
@@ -11,4 +12,5 @@ export interface PatientSurveyRootData {
 
 export interface PatientSurveyRootAttributes {
   banner: BannerTop;
+  seo: Seo;
 }

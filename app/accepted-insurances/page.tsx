@@ -1,6 +1,13 @@
 import { Banner, InsurancesAccept, SmileClub } from '@/components';
 import type { AcceptedInsuranceRoot } from '@/types/accepted-insurances';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
+
+export async function generateMetadata() {
+  const { data } = await fetchAPI<AcceptedInsuranceRoot>('accepted-insurances-page');
+
+  return generateSeoMetaData(data);
+}
 
 export default async function Page() {
   const { data } = await fetchAPI<AcceptedInsuranceRoot>('accepted-insurances-page');

@@ -1,3 +1,4 @@
+import type { Seo } from './seo';
 import type { BannerTop } from './service-page';
 
 export interface AcceptedInsuranceRoot {
@@ -12,6 +13,7 @@ export interface AcceptedInsurance {
   insurances: Insurances;
   SmileClub: SmileClub;
   createdAt: string;
+  seo: Seo;
   updatedAt: string;
   publishedAt: string;
 }

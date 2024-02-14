@@ -1,5 +1,6 @@
 import type { Banner } from './home-page';
 import type { Images } from './image';
+import type { Seo } from './seo';
 
 export interface RootServicePage {
   data: DataService;
@@ -14,6 +15,7 @@ export interface ServicePageI {
   title: string;
   description: string;
   bgImage: Images;
+  seo: Seo;
   button: boolean;
   Faq: Faq;
   content: string;

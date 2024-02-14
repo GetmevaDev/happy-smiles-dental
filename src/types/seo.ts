@@ -1,5 +1,3 @@
-import type { Image } from './about-us-page';
-
 export interface Seo {
   id: number;
   metaTitle: string;
@@ -13,10 +11,20 @@ export interface Seo {
   canonicalURL: string;
 }
 
+export interface Image {
+  data: {
+    attributes: {
+      url: string;
+      name: string;
+      width: number;
+      height: number;
+    };
+  };
+}
+
 export interface MetaSocial {
   id: number;
   socialNetwork: string;
   title: string;
   description: string;
-  image: Image;
 }

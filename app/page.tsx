@@ -2,6 +2,13 @@ import { Appointment, Block, Choose, OurServices, Slider } from '@/components';
 import { LeaveForm } from '@/components/LeaveForm/LeaveForm';
 import type { RootHomePageI } from '@/types/home-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
+
+export async function generateMetadata() {
+  const { data } = await fetchAPI<RootHomePageI>('home-page');
+
+  return generateSeoMetaData(data);
+}
 
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');

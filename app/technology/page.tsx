@@ -3,11 +3,13 @@ import type { Metadata } from 'next';
 import { Banner, Brightness, Info } from '@/components';
 import type { RootTechnologyPage } from '@/types/technology-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
-// export const metadata: Metadata = {
-//   title: 'Technology'
-// };
+export async function generateMetadata() {
+  const { data } = await fetchAPI<RootTechnologyPage>('technology-page');
 
+  return generateSeoMetaData(data);
+}
 export default async function Page() {
   const { data } = await fetchAPI<RootTechnologyPage>('technology-page');
 

@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-
-import { Banner, Review, Slider, Video } from '@/components';
+import { Banner, Slider, Video } from '@/components';
 import { LeaveReview } from '@/components/LeaveReview/LeaveReview';
 import type { TestimonialsPageRoot } from '@/types/testimonials-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
-export const metadata: Metadata = {
-  title: 'Testimonials'
-};
+export async function generateMetadata() {
+  const { data } = await fetchAPI<TestimonialsPageRoot>('testimonials-page');
 
+  return generateSeoMetaData(data);
+}
 export default async function Page() {
   const { data } = await fetchAPI<TestimonialsPageRoot>('testimonials-page');
 

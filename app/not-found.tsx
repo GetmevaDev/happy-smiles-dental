@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { ROUTES } from "@/utils/constants";
+import { ROUTES } from '@/utils/constants';
 
 const NotFound = () => (
-  <div>
+  <div className='not-found'>
     <Link href={ROUTES.ROOT}>Go to Home </Link>
   </div>
 );

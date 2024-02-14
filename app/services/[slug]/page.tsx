@@ -3,6 +3,13 @@ import { Faq } from '@/components/Faq/Faq';
 import { ServiceBlock } from '@/components/ServiceBlock/ServiceBlock';
 import type { DataService, RootServicePage, ServiceCategory } from '@/types/service-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { data } = await fetchAPI<RootServicePage>(`services/find-by-slug/${params.slug}`);
+
+  return generateSeoMetaData(data);
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { data } = await fetchAPI<RootServicePage>(`services/find-by-slug/${params.slug}`);

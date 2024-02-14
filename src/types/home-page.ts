@@ -1,6 +1,7 @@
 import type { Image } from './about-us-page';
 import type { Images } from './image';
 import type { ContentBlock, RichBlockText } from './rich-block';
+import type { Seo } from './seo';
 
 export interface RootHomePageI {
   data: Data;
@@ -14,6 +15,8 @@ export interface HomePageI {
   Block: Block;
   Banner: Banner;
   Slider: Slider;
+  seo: Seo;
+
   ChooseBlock: ChooseBlock;
   OurServices: OurServiceI[];
 }

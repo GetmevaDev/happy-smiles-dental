@@ -7,14 +7,12 @@ import { LeaveForm } from '@/components/LeaveForm/LeaveForm';
 import { MeetOurTeam } from '@/components/MeetOurTeam/MeetOurTeam';
 import type { RootAboutUsPage } from '@/types/about-us-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
 export async function generateMetadata() {
   const { data } = await fetchAPI<RootAboutUsPage>('about-us-page');
 
-  return {
-    title: data.attributes.seo.metaTitle,
-    description: data.attributes.seo.metaDescription
-  };
+  return generateSeoMetaData(data);
 }
 
 export default async function Page() {
