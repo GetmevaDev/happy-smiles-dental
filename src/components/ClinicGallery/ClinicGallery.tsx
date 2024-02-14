@@ -24,9 +24,6 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => (
       <div>
         <Swiper
           breakpoints={{
-            600: {
-              slidesPerView: 2
-            },
             300: {
               slidesPerView: 1
             },

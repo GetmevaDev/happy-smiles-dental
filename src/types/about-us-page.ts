@@ -37,7 +37,14 @@ export interface ClinicAwards {
 export interface ClinicAward {
   id: number;
   text: string;
-  image: Image;
+  image: {
+    data: {
+      id: number;
+      attributes: {
+        url: string;
+      };
+    };
+  };
 }
 
 export interface ClinicGalleryI {

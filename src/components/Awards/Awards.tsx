@@ -46,7 +46,7 @@ export const Awards: FC<{ title: string; cards: ClinicAward[] }> = ({ title, car
                   alt='image'
                   className={styles.image}
                   height={162}
-                  src={card.image.data.attributes.url}
+                  src={card.image.data?.attributes.url}
                   width={162}
                 />
 

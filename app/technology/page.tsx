@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from 'next';
 
 import { Banner, Brightness, Info } from '@/components';
@@ -12,8 +10,6 @@ import { fetchAPI } from '@/utils/api/fetchApi';
 
 export default async function Page() {
   const { data } = await fetchAPI<RootTechnologyPage>('technology-page');
-
-  console.log(data, 'data');
 
   return (
     <main>

@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .gallery {
   background: #f5f5f5;
   border-radius: 20px;
@@ -40,4 +42,10 @@
   letter-spacing: 0.015em;
   text-align: center;
   color: #000;
+}
+
+@media (max-width: $phoneWidth) {
+  .gallery {
+    padding: 20px;
+  }
 }

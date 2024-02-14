@@ -18,17 +18,19 @@ export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, ca
   const swiperRef = useRef();
 
   return (
-    <section className={styles.slider}>
-      <Image alt='slider' className={styles.image} height={760} src='/slider.png' width={1480} />
+    <section
+      className={styles.slider}
+      style={{
+        backgroundImage: 'url(/slider.png)'
+      }}
+    >
+      {/* <Image alt='slider' className={styles.image} height={760} src='/slider.png' width={1480} /> */}
       <div className={styles.slider_wrap}>
         <h2 className={styles.title}>{title}</h2>
 
         <div className={styles.slider_inner}>
           <Swiper
             breakpoints={{
-              600: {
-                slidesPerView: 2
-              },
               300: {
                 slidesPerView: 1
               },

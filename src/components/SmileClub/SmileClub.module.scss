@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .section {
   background: #f5f5f5;
   border-radius: 20px;
@@ -138,4 +140,22 @@
   line-height: 50px;
   letter-spacing: 0.015em;
   text-align: left;
+}
+
+@media (max-width: $phoneWidth) {
+  .section {
+    padding: 20px;
+  }
+  .include {
+    grid-template-columns: auto;
+  }
+
+  .price_inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price_text {
+    line-height: 30px;
+  }
 }
