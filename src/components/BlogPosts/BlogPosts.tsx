@@ -3,6 +3,7 @@ import React from 'react';
 
 import type { RootPostsPageData } from '@/types/posts';
 import { Typography } from '@/ui';
+import { Pagination } from '@/ui/pagination/pagination';
 
 import { BlogPostCard } from './BlogPostCard/BlogPostCard';
 import styles from './BlogPosts.module.scss';
@@ -19,6 +20,8 @@ export const BlogPosts: FC<{ posts: RootPostsPageData[] }> = ({ posts }) => (
           <BlogPostCard key={post.id} post={post.attributes} />
         ))}
       </div>
+
+      <Pagination totalPages={10} />
     </div>
   </section>
 );
