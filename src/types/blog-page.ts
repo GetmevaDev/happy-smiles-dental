@@ -12,5 +12,5 @@ export interface RootBlogPage {
 
 export interface RootBlogPageAttributes {
   banner: BannerTop;
-  posts: RootPostsPageData[];
+  posts: { data: RootPostsPageData[] };
 }

@@ -1,24 +1,26 @@
 import Image from 'next/image';
+import type { FC } from 'react';
 import React from 'react';
+
+import type { RootPostsPageAttributes } from '@/types/posts';
+import { truncateText } from '@/utils/lib/truncateText';
 
 import styles from './BlogPostCard.module.scss';
 
-export const BlogPostCard = () => (
+export const BlogPostCard: FC<{ post: RootPostsPageAttributes }> = ({ post }) => (
   <div className={styles.card}>
-    <div className={styles.title}>Maximize Your Dental Benefits Before the Year Ends</div>
-    <div className={styles.description}>
-      As the year draws to a close, it`s not just the holiday season that should be on your mind –
-      it`s also an ideal time to take a closer look at your dental insurance benefits. Most dental
-      insurance plan...
-    </div>
+    <div className={styles.title}>{post?.title}</div>
+    <div className={styles.description}>{truncateText(post?.content, 100)}</div>
 
     <div className={styles.bottom}>
       <div className={styles.date}>6 December 2023</div>
       <button className={styles.read}>
-        Read more
-        <span>
-          <Image alt='chevron' height={10} src='/chevron.svg' width={10} />
-        </span>
+        <a className={styles.link} href={`/blog/${post?.slug}`}>
+          Read more
+          <span>
+            <Image alt='chevron' height={10} src='/chevron.svg' width={10} />
+          </span>
+        </a>
       </button>
     </div>
   </div>

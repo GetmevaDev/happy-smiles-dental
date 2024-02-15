@@ -22,7 +22,7 @@ export default async function Page() {
         title={data?.attributes?.banner?.title}
       />
 
-      <BlogPosts />
+      <BlogPosts posts={data?.attributes?.posts.data} />
     </main>
   );
 }
