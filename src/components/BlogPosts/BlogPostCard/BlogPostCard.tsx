@@ -1,4 +1,6 @@
+import dayjs from 'dayjs';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -13,14 +15,14 @@ export const BlogPostCard: FC<{ post: RootPostsPageAttributes }> = ({ post }) =>
     <div className={styles.description}>{truncateText(post?.content, 100)}</div>
 
     <div className={styles.bottom}>
-      <div className={styles.date}>6 December 2023</div>
+      <div className={styles.date}>{dayjs(post?.createdAt).format('D MMMM YYYY	')}</div>
       <button className={styles.read}>
-        <a className={styles.link} href={`/blog/${post?.slug}`}>
+        <Link className={styles.link} href={`/blog/${post?.slug}`}>
           Read more
           <span>
             <Image alt='chevron' height={10} src='/chevron.svg' width={10} />
           </span>
-        </a>
+        </Link>
       </button>
     </div>
   </div>

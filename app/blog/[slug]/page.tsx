@@ -1,5 +1,19 @@
 import type { Metadata } from 'next';
 
-export default function Page() {
-  return <main>slug</main>;
+import { Banner } from '@/components';
+import type { PostPageRoot } from '@/types/post';
+import { fetchAPI } from '@/utils/api/fetchApi';
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const { data } = await fetchAPI<PostPageRoot>(`posts/find-by-slug/${params.slug}`);
+
+  return (
+    <main>
+      <Banner
+        buttonBack
+        image={data?.attributes?.bgImage?.data?.attributes?.url}
+        title={data?.attributes?.title}
+      />
+    </main>
+  );
 }

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -12,9 +13,10 @@ interface BannerProps {
   subTitle?: string;
   image?: string;
   button?: boolean;
+  buttonBack?: boolean;
 }
 
-export const Banner: FC<BannerProps> = ({ title, subTitle, button, image }) => (
+export const Banner: FC<BannerProps> = ({ title, subTitle, button, image, buttonBack }) => (
   <section className={styles.section}>
     <div className={styles.image_inner}>
       {image && (
@@ -29,6 +31,23 @@ export const Banner: FC<BannerProps> = ({ title, subTitle, button, image }) => (
           <Typography tag='h1'>{title}</Typography>
 
           {button && <Button className={styles.btn}>Make an appointment</Button>}
+
+          {buttonBack && (
+            <button className={styles.btn}>
+              <Link className={styles.btn_link} href='/blog'>
+                <span>
+                  <Image
+                    alt='chevron'
+                    className={styles.svg}
+                    height={10}
+                    src='/chevron.svg'
+                    width={10}
+                  />
+                </span>
+                Back to articles
+              </Link>
+            </button>
+          )}
         </div>
       </div>
     </div>

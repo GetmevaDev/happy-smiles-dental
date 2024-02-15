@@ -25,3 +25,27 @@
 .btn {
   margin-top: 20px;
 }
+
+.btn {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.btn_link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: var(--font-general);
+  color: #000;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.svg {
+  transform: rotate(-180deg);
+}

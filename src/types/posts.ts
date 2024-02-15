@@ -24,6 +24,7 @@ export interface RootPostsPageAttributes {
   slug: string;
   title: string;
   subTitle: string;
+  createdAt: string;
   bgImage: {
     data: {
       attributes: {
