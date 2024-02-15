@@ -29,6 +29,7 @@
 .btn {
   border: none;
   outline: none;
+  padding-top: 10px;
   background: transparent;
 }
 
@@ -38,7 +39,7 @@
   justify-content: center;
   font-family: var(--font-general);
   color: #000;
-  gap: 10px;
+  gap: 5px;
   font-size: 25px;
   font-weight: 500;
   line-height: 34px;
@@ -48,4 +49,6 @@
 
 .svg {
   transform: rotate(-180deg);
+  position: relative;
+  top: -3px;
 }
