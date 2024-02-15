@@ -17,6 +17,7 @@ interface Data {
 }
 
 export function generateSeoMetaData(data: Data) {
+  console.log(data, 'data');
   return {
     title: data?.attributes?.seo?.metaTitle,
     description: data?.attributes?.seo?.metaDescription,
