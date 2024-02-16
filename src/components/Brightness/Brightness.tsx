@@ -41,7 +41,7 @@ export const Brightness: FC<BrightnessProps> = ({
       {image && (
         <div className={styles.image_inner}>
           <Image alt='tooth' className={styles.image} height={height} src={image} width={width} />
-          <div className={styles.circle} />
+          {/* <div className={styles.circle} /> */}
         </div>
       )}
     </div>

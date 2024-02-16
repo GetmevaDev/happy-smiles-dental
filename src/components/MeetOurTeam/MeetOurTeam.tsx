@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -22,7 +23,11 @@ export const MeetOurTeam: FC<{ title: string; doctorSpeciality: string; name: st
 
         <div className={styles.text}>
           <div className={styles.text_inner}>
-            <h4 className={styles.doctor}>{name}</h4>
+            <h4 className={styles.doctor}>
+              <Link className={styles.doctor} href='/doctor-of-dental-surgery'>
+                {name}
+              </Link>
+            </h4>
             <p className={styles.speciality}>{doctorSpeciality}</p>
           </div>
         </div>
