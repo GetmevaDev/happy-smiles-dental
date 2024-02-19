@@ -18,6 +18,10 @@ interface NavigationProps {
   categories: ServiceCategory[];
 }
 
+interface ServicesByCategory {
+  [category: string]: NavigationMenuService[];
+}
+
 export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
   const pathname = usePathname();
 
@@ -29,12 +33,11 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
     if (menu.services?.data.length > 0) {
       return (
         <div className={styles.sub_menu}>
-          {Object.entries(servicesByCategory).map(([category, item]) => (
-            <div key={item.id} className={styles.sub_menu_item}>
+          {Object.entries(servicesByCategory as ServicesByCategory).map(([category, item]) => (
+            <div key={category} className={styles.sub_menu_item}>
               <div className={styles.category}>{category}</div>
-
               <ul className={styles.sub_menu_services}>
-                {item.map((el: NavigationMenuService) => (
+                {item?.map((el: NavigationMenuService) => (
                   <li key={el.id} className={styles.sub_menu_item}>
                     <Link
                       href={
