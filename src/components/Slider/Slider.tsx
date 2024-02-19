@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 
 import type { SliderCardI } from '@/types/home-page';
 import type { ReviewsData } from '@/types/reviews';
+import useSwiperControl from '@/utils/hooks/useSwiperControl';
 
 import { ArrowButton } from '../ArrowButtons/ArrowButton';
 
@@ -19,25 +20,8 @@ import styles from './Slider.module.scss';
 import { SliderCard } from './SliderCard/SliderCard';
 
 export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, cards }) => {
-  const [swiperRef, setSwiperRef] = useState<SwiperClass>();
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-
-  const handlePrevious = useCallback(() => {
-    if (swiperRef) {
-      swiperRef.slidePrev();
-      setIsEnd(swiperRef.isEnd);
-      setIsBeginning(swiperRef.isBeginning);
-    }
-  }, [swiperRef]);
-
-  const handleNext = useCallback(() => {
-    if (swiperRef) {
-      swiperRef.slideNext();
-      setIsEnd(swiperRef.isEnd);
-      setIsBeginning(swiperRef.isBeginning);
-    }
-  }, [swiperRef]);
+  const { swiperRef, setSwiperRef, isBeginning, isEnd, handlePrevious, handleNext } =
+    useSwiperControl();
 
   return (
     <section

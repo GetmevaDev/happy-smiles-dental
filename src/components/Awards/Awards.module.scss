@@ -34,6 +34,19 @@
   gap: 20px;
 }
 
+.buttons {
+  box-shadow: 0px 16.5px 30px 0px #3131311a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 65px auto 0;
+  border-radius: 70px;
+  height: 66px;
+  width: 150px;
+  background: #fff;
+  gap: 20px;
+}
+
 .text {
   font-family: var(--font-mont);
   font-size: 25px;
