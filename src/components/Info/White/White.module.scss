@@ -39,6 +39,24 @@
   border-radius: 15px;
 }
 
+@media (max-width: $smDesktopWidth) {
+  .section {
+    flex-direction: column-reverse;
+    align-items: normal;
+    margin: 100px 0;
+    padding: 20px;
+  }
+  .right {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media (max-width: $phoneWidth) {
   .section {
     flex-direction: column-reverse;

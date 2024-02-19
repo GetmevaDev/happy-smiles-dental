@@ -4,6 +4,7 @@ import '../src/styles/globals.scss';
 import type { RooutObjectNavigation } from '@/types/navigation';
 import type { ServiceCategory } from '@/types/service-page';
 import { Layout } from '@/ui';
+import { MobileMenu } from '@/ui/mobile/navigation/MobileMenu';
 import { fetchAPI } from '@/utils/api/fetchApi';
 
 export const mont = Montserrat({
@@ -25,7 +26,8 @@ export default async function RootLayout({
     <html className={`${mont.variable}`} lang='en'>
       <body>
         <div className='wrapper'>
-          <Layout.Header categories={categories.data} data={data} />
+          <Layout.Header categories={categories?.data} data={data} />
+
           <main className='container'>{children}</main>
           <Layout.Footer data={data} />
         </div>

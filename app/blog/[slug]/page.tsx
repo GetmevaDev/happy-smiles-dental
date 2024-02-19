@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { data } = await fetchAPI<PostPageRoot>(`posts/find-by-slug/${params.slug}`);
 
   return (
-    <main>
+    <div>
       <Banner
         buttonBack
         image={data?.attributes?.bgImage?.data?.attributes?.url}
@@ -17,6 +17,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
       />
 
       <Post content={data?.attributes?.content} createdAt={data?.attributes?.createdAt} />
-    </main>
+    </div>
   );
 }

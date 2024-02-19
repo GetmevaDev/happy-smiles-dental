@@ -66,6 +66,16 @@
   background-color: #c7c7c7;
 }
 
+@media (max-width: $smDesktopWidth) {
+  .top {
+    display: none;
+  }
+
+  .border {
+    display: none;
+  }
+}
+
 @media (max-width: $phoneWidth) {
   .top {
     display: none;

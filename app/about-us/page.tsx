@@ -19,7 +19,7 @@ export default async function Page() {
   const { data } = await fetchAPI<RootAboutUsPage>('about-us-page');
 
   return (
-    <main>
+    <div>
       <Banner
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
@@ -49,6 +49,6 @@ export default async function Page() {
       <ClinicGallery images={data?.attributes?.ClinicGallery?.images.data} />
 
       <LeaveForm />
-    </main>
+    </div>
   );
 }

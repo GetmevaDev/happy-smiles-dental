@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const faqs = await fetchAPI<FaqsRoot>(`faqs`);
 
   return (
-    <main>
+    <div>
       <Banner
         image={data?.attributes?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.description}
@@ -33,6 +33,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         services={services?.data}
       />
       <Faq faqs={faqs?.data} />
-    </main>
+    </div>
   );
 }

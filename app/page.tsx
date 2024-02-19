@@ -15,7 +15,7 @@ export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
   const reviews = await fetchAPI<ReviewsRoot>('reviews');
   return (
-    <main>
+    <div>
       <Appointment
         description={data?.attributes?.Block?.description}
         image={data?.attributes?.Block?.image?.data?.attributes?.url}
@@ -35,6 +35,6 @@ export default async function Page() {
       />
       <OurServices services={data?.attributes?.OurServices?.services?.data} title='Our services' />
       <LeaveForm />
-    </main>
+    </div>
   );
 }

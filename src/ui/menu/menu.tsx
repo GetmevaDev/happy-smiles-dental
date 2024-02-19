@@ -18,7 +18,7 @@ interface MenuProps {
 }
 
 export const Menu: FC<MenuProps> = ({ data, categories }) => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 1100px)');
 
   return (
     <nav className={styles.menu}>

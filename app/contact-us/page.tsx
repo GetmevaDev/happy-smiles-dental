@@ -14,7 +14,7 @@ export default async function Page() {
   const { data } = await fetchAPI<RootContactUsPage>('contact-us-page');
 
   return (
-    <main>
+    <div>
       <Banner
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
@@ -26,6 +26,6 @@ export default async function Page() {
         hours={data?.attributes?.hours?.workingHour}
         title={data?.attributes?.hours?.title}
       />
-    </main>
+    </div>
   );
 }

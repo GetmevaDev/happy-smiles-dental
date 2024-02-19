@@ -14,7 +14,7 @@
 .header {
   width: 100%;
   position: absolute;
-  z-index: 9999;
+  z-index: 1000;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -39,6 +39,19 @@
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: $smDesktopWidth) {
+  .header_inner {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $tableWidth) {
+  .menu {
+    width: 100%;
+    padding: 0 10px;
   }
 }
 

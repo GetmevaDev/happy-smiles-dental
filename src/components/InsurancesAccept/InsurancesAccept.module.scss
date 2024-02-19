@@ -50,6 +50,16 @@
   border: 1px solid #e2e2e2;
 }
 
+@media (max-width: $tableWidth) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
 @media (max-width: $phoneWidth) {
   .cards {
     grid-template-columns: auto;

@@ -15,7 +15,7 @@ export default async function Page() {
   const reviews = await fetchAPI<ReviewsRoot>('reviews');
 
   return (
-    <main>
+    <div>
       <Banner
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
@@ -26,6 +26,6 @@ export default async function Page() {
         <Slider cards={reviews?.data} />
       </div>
       <Video url={data?.attributes?.videoUrl} />
-    </main>
+    </div>
   );
 }

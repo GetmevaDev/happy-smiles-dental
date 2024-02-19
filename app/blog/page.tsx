@@ -30,7 +30,7 @@ export default async function Page({
   );
 
   return (
-    <main>
+    <div>
       <Banner
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
@@ -38,6 +38,6 @@ export default async function Page({
       />
 
       <BlogPosts meta={posts?.meta} posts={posts?.data} />
-    </main>
+    </div>
   );
 }

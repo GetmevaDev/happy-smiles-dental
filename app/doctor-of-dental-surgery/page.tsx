@@ -6,7 +6,7 @@ export default async function Page() {
   const { data } = await fetchAPI<DoctorPageRootI>('doctor-page');
 
   return (
-    <main>
+    <div>
       <Banner
         button={data?.attributes?.banner?.button}
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
@@ -21,6 +21,6 @@ export default async function Page() {
         title={data?.attributes?.title}
         width={343}
       />
-    </main>
+    </div>
   );
 }
