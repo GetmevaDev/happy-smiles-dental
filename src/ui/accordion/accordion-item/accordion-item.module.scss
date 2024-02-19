@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .accordionItem {
   box-shadow: 0px 16.5px 30px 0px #3131311a;
   border: 1px solid #e2e2e2;
@@ -75,4 +77,21 @@
 
 .rotate {
   transform: rotate(180deg);
+}
+
+@media (max-width: $tableWidth) {
+  .accordionItem {
+    padding: 20px 10px;
+  }
+
+  .accordionItemTitle {
+    padding-bottom: 0;
+  }
+
+  .accordionItemBtn {
+    font-size: 20px;
+  }
+  .accordionItemContent {
+    font-size: 17px;
+  }
 }

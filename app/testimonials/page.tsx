@@ -25,7 +25,7 @@ export default async function Page() {
       <div className='padding'>
         <Slider cards={reviews?.data} />
       </div>
-      <Video />
+      <Video url={data?.attributes?.videoUrl} />
     </main>
   );
 }

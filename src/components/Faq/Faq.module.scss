@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .faq {
   background: #f5f5f5;
   padding: 100px;
@@ -8,4 +10,10 @@
 .title {
   text-align: center;
   padding-bottom: 60px;
+}
+
+@media (max-width: $tableWidth) {
+  .faq {
+    padding: 20px;
+  }
 }

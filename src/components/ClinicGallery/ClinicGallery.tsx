@@ -60,20 +60,19 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
                 />
               </SwiperSlide>
             ))}
-
-            <div className={styles.buttons}>
-              <ArrowButton
-                className={`custom-prev-class ${isBeginning ? 'swiper-button-disabled' : ''}`}
-                direction='left'
-                onClick={handlePrevious}
-              />
-              <ArrowButton
-                className={`custom-next-class ${isEnd ? 'swiper-button-disabled' : ''}`}
-                direction='right'
-                onClick={handleNext}
-              />
-            </div>
           </Swiper>
+        </div>
+        <div className={styles.buttons}>
+          <ArrowButton
+            className={`custom-prev-class ${isBeginning ? 'swiper-button-disabled' : ''}`}
+            direction='left'
+            onClick={handlePrevious}
+          />
+          <ArrowButton
+            className={`custom-next-class ${isEnd ? 'swiper-button-disabled' : ''}`}
+            direction='right'
+            onClick={handleNext}
+          />
         </div>
       </div>
     </div>
