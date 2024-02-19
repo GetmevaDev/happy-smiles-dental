@@ -1,5 +1,6 @@
 import { Banner, Slider, Video } from '@/components';
 import { LeaveReview } from '@/components/LeaveReview/LeaveReview';
+import type { ReviewsRoot } from '@/types/reviews';
 import type { TestimonialsPageRoot } from '@/types/testimonials-page';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
@@ -11,6 +12,7 @@ export async function generateMetadata() {
 }
 export default async function Page() {
   const { data } = await fetchAPI<TestimonialsPageRoot>('testimonials-page');
+  const reviews = await fetchAPI<ReviewsRoot>('reviews');
 
   return (
     <main>
@@ -21,7 +23,7 @@ export default async function Page() {
       />
       <LeaveReview />
       <div className='padding'>
-        <Slider cards={[]} title='Testimonials' />
+        <Slider cards={reviews?.data} />
       </div>
       <Video />
     </main>

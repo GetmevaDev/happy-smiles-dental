@@ -38,7 +38,6 @@ export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, ca
       setIsBeginning(swiperRef.isBeginning);
     }
   }, [swiperRef]);
-  console.log(swiperRef?.isEnd, 'seiper');
 
   return (
     <section
@@ -48,7 +47,7 @@ export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, ca
       }}
     >
       <div className={styles.slider_wrap}>
-        <h2 className={styles.title}>{title}</h2>
+        {title && <h2 className={styles.title}>{title}</h2>}
 
         <div className={styles.slider_inner}>
           <Swiper
