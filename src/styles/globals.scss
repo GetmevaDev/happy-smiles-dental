@@ -97,3 +97,25 @@ body::-webkit-scrollbar-thumb {
   font-weight: 700;
   color: #000000;
 }
+
+.custom-prev-class.swiper-button-disabled,
+.custom-next-class.swiper-button-disabled {
+  background: none;
+  svg {
+    color: #000;
+    path {
+      fill: #000;
+    }
+  }
+}
+
+.custom-prev-class:not(.swiper-button-disabled),
+.custom-next-class:not(.swiper-button-disabled) {
+  background: var(--main-color);
+  svg {
+    color: #fff;
+    path {
+      fill: #fff;
+    }
+  }
+}

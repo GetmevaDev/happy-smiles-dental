@@ -1,6 +1,7 @@
 import { Appointment, Block, Choose, OurServices, Slider } from '@/components';
 import { LeaveForm } from '@/components/LeaveForm/LeaveForm';
 import type { RootHomePageI } from '@/types/home-page';
+import type { ReviewsRoot } from '@/types/reviews';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
@@ -12,7 +13,7 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
-
+  const reviews = await fetchAPI<ReviewsRoot>('reviews');
   return (
     <main>
       <Appointment
@@ -26,13 +27,13 @@ export default async function Page() {
         image={data?.attributes?.Banner?.image?.data?.attributes?.url}
         title={data?.attributes?.Banner?.title}
       />
-      <Slider cards={data?.attributes?.Slider.SliderCard} title={data?.attributes?.Slider?.title} />
+      <Slider cards={reviews?.data} title='What people say' />
       <Choose
         cards={data?.attributes?.ChooseBlock?.ChooseBlockCard}
         description={data?.attributes?.ChooseBlock?.description}
         title={data?.attributes?.ChooseBlock?.title}
       />
-      <OurServices services={data?.attributes?.OurServices} title='Our services' />
+      <OurServices services={data?.attributes?.OurServices?.services?.data} title='Our services' />
       <LeaveForm />
     </main>
   );

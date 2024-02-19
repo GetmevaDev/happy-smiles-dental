@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 // header.module.scss
 
 .header_inner {
@@ -36,5 +38,11 @@
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: $phoneWidth) {
+  .header_inner {
+    flex-direction: column;
   }
 }

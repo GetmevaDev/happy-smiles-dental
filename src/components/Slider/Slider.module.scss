@@ -9,6 +9,7 @@
   width: 1480;
   height: 760;
   margin-bottom: 100px;
+  padding-bottom: 65px;
 }
 
 .title {
@@ -36,15 +37,13 @@
 .buttons {
   box-shadow: 0px 16.5px 30px 0px #3131311a;
   display: flex;
-  width: 120px;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   border-radius: 70px;
   height: 66px;
-  padding: 29px 20px;
-  margin-top: 65px;
-  justify-content: center;
+  width: 150px;
   background: #fff;
-  align-items: center;
   gap: 20px;
 }
 

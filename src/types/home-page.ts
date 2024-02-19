@@ -18,7 +18,26 @@ export interface HomePageI {
   seo: Seo;
 
   ChooseBlock: ChooseBlock;
-  OurServices: OurServiceI[];
+  OurServices: {
+    id: number;
+    services: {
+      data: {
+        id: number;
+        attributes: {
+          slug: string;
+          title: string;
+          service_category: {
+            data: {
+              id: number;
+              attributes: {
+                category: string;
+              };
+            };
+          };
+        };
+      }[];
+    };
+  };
 }
 
 export interface Banner {
@@ -76,15 +95,15 @@ export interface OurServicesDataI {
 
 export interface OurServicesAttributes {
   slug: string;
-  content: string;
+  content?: string;
   title: string;
-  description: string;
-  bgImage: Image;
-  button: boolean;
+  description?: string;
+  bgImage?: Image;
+  button?: boolean;
 
   service_category: {
     data: {
-      attibutes: {
+      attributes: {
         category: string;
       };
     };

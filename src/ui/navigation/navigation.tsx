@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
 import React, { useState } from 'react';
-import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
+import { IoChevronDownOutline, IoChevronUpOutline, IoClose, IoMenu } from 'react-icons/io5';
 
 import type { NavigationData, NavigationMenu, NavigationMenuService } from '@/types/navigation';
 import type { ServiceCategory } from '@/types/service-page';
+import { useServicesByCategory } from '@/utils/hooks/useServicesByCategory';
 
 import styles from './navigation.module.scss';
 
@@ -17,26 +18,12 @@ interface NavigationProps {
   categories: ServiceCategory[];
 }
 
-interface ServicesByCategory {
-  [key: string]: NavigationMenuService[];
-}
-
 export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
   const pathname = usePathname();
 
   const servicesPath = pathname.split('/')[1];
 
-  const servicesByCategory = categories.reduce<ServicesByCategory>((acc, category) => {
-    const filteredServices = data.flatMap(
-      (item) =>
-        item?.attributes?.menu?.services?.data?.filter(
-          (service) => service.attributes.service_category.data.id === category.id
-        ) || []
-    );
-
-    acc[category.attributes.category] = filteredServices;
-    return acc;
-  }, {});
+  const servicesByCategory = useServicesByCategory(data, categories);
 
   const renderSubMenu = (menu: NavigationMenu) => {
     if (menu.services?.data.length > 0) {
@@ -81,7 +68,7 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
   };
 
   return (
-    <ul className={styles.menu_inner}>
+    <ul className={classNames(styles.menu_inner)}>
       {data
         ?.sort((a, b) => a.id - b.id)
         .map((item) => (
@@ -105,9 +92,7 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
               )}
             </div>
 
-            {/* <div className={styles.panel}> */}
             {item?.attributes?.menu && renderSubMenu(item?.attributes?.menu)}
-            {/* </div> */}
           </li>
         ))}
     </ul>

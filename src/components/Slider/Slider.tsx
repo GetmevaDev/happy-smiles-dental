@@ -2,20 +2,43 @@
 
 import Image from 'next/image';
 import type { FC } from 'react';
-import React, { useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Navigation } from 'swiper/modules';
+import type { SwiperClass } from 'swiper/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import type { SliderCardI } from '@/types/home-page';
+import type { ReviewsData } from '@/types/reviews';
+
+import { ArrowButton } from '../ArrowButtons/ArrowButton';
 
 import styles from './Slider.module.scss';
 import { SliderCard } from './SliderCard/SliderCard';
 
-export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, cards }) => {
-  const swiperRef = useRef();
+export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, cards }) => {
+  const [swiperRef, setSwiperRef] = useState<SwiperClass>();
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handlePrevious = useCallback(() => {
+    if (swiperRef) {
+      swiperRef.slidePrev();
+      setIsEnd(swiperRef.isEnd);
+      setIsBeginning(swiperRef.isBeginning);
+    }
+  }, [swiperRef]);
+
+  const handleNext = useCallback(() => {
+    if (swiperRef) {
+      swiperRef.slideNext();
+      setIsEnd(swiperRef.isEnd);
+      setIsBeginning(swiperRef.isBeginning);
+    }
+  }, [swiperRef]);
+  console.log(swiperRef?.isEnd, 'seiper');
 
   return (
     <section
@@ -24,7 +47,6 @@ export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, ca
         backgroundImage: 'url(/slider.png)'
       }}
     >
-      {/* <Image alt='slider' className={styles.image} height={760} src='/slider.png' width={1480} /> */}
       <div className={styles.slider_wrap}>
         <h2 className={styles.title}>{title}</h2>
 
@@ -40,6 +62,11 @@ export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, ca
             }}
             className='mySwiper'
             modules={[Navigation]}
+            navigation={{
+              prevEl: '.custom-prev-class',
+              nextEl: '.custom-next-class'
+            }}
+            onSwiper={setSwiperRef}
             slidesPerView={1}
             spaceBetween={30}
           >
@@ -48,12 +75,19 @@ export const Slider: FC<{ title?: string; cards: SliderCardI[] }> = ({ title, ca
                 <SliderCard {...card} />
               </SwiperSlide>
             ))}
-
-            <div className={styles.buttons}>
-              <button className={styles.prev}>Prev</button>
-              <button className={styles.next}>Next</button>
-            </div>
           </Swiper>
+        </div>
+        <div className={styles.buttons}>
+          <ArrowButton
+            className={`custom-prev-class ${isBeginning ? 'swiper-button-disabled' : ''}`}
+            direction='left'
+            onClick={handlePrevious}
+          />
+          <ArrowButton
+            className={`custom-next-class ${isEnd ? 'swiper-button-disabled' : ''}`}
+            direction='right'
+            onClick={handleNext}
+          />
         </div>
       </div>
     </section>
