@@ -81,6 +81,14 @@ export interface OurServicesAttributes {
   description: string;
   bgImage: Image;
   button: boolean;
+
+  service_category: {
+    data: {
+      attibutes: {
+        category: string;
+      };
+    };
+  };
 }
 
 export interface ChooseCardI {

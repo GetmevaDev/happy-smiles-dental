@@ -31,7 +31,9 @@ export interface NavigationMenuService {
   id: number;
   attributes: {
     title: string;
-    service_category: ServiceCategory;
+    service_category: {
+      data: ServiceCategory;
+    };
     slug: string;
   };
 }

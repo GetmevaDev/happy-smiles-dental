@@ -72,6 +72,11 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
                 </Link>
               </li>
             ))}
+          <li>
+            <Link className={pathname === '/blog' ? styles.active : styles.menu_link} href='/blog'>
+              Blog
+            </Link>
+          </li>
         </ul>
 
         <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>

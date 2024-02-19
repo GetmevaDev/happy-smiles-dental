@@ -26,6 +26,10 @@ body {
   margin: 0;
 }
 
+body {
+  height: 100%;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -52,7 +56,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.2em;
+  width: 0.7em;
 }
 
 body::-webkit-scrollbar-track {
@@ -71,4 +75,25 @@ body::-webkit-scrollbar-thumb {
 .not-found {
   margin: 200px auto 0;
   text-align: center;
+}
+
+.lorem {
+  font-family: var(--font-mont);
+  color: #2a2a2a;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.015em;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 500px !important;
+  font-family: var(--font-general);
+  font-weight: 700;
+  color: #000000;
 }

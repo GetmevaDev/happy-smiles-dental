@@ -1,3 +1,6 @@
+'use client';
+
+import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
@@ -5,35 +8,68 @@ import React, { useState } from 'react';
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
 
 import type { NavigationData, NavigationMenu, NavigationMenuService } from '@/types/navigation';
-import { navigation } from '@/utils/constants';
+import type { ServiceCategory } from '@/types/service-page';
 
 import styles from './navigation.module.scss';
 
 interface NavigationProps {
   data: NavigationData[];
+  categories: ServiceCategory[];
 }
 
-export const Navigation: FC<NavigationProps> = ({ data }) => {
-  const [activeSubMenu, setActiveSubMenu] = useState(null);
+interface ServicesByCategory {
+  [key: string]: NavigationMenuService[];
+}
 
+export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
   const pathname = usePathname();
 
-  const renderSubMenu = (menu: NavigationMenu, id: number) => {
+  const servicesPath = pathname.split('/')[1];
+
+  const servicesByCategory = categories.reduce<ServicesByCategory>((acc, category) => {
+    const filteredServices = data.flatMap(
+      (item) =>
+        item?.attributes?.menu?.services?.data?.filter(
+          (service) => service.attributes.service_category.data.id === category.id
+        ) || []
+    );
+
+    acc[category.attributes.category] = filteredServices;
+    return acc;
+  }, {});
+
+  const renderSubMenu = (menu: NavigationMenu) => {
     if (menu.services?.data.length > 0) {
       return (
-        <ul className={`${styles.sub_menu} ${activeSubMenu === id ? styles.sub_menu_active : ''}`}>
-          {menu.services.data.map((service) => (
-            <li key={service.id} className={styles.sub_menu_item}>
-              <Link href={`services/${service.attributes.slug}`}>{service.attributes.title}</Link>
-            </li>
+        <div className={styles.sub_menu}>
+          {Object.entries(servicesByCategory).map(([category, item]) => (
+            <div key={item.id} className={styles.sub_menu_item}>
+              <div className={styles.category}>{category}</div>
+
+              <ul className={styles.sub_menu_services}>
+                {item.map((el: NavigationMenuService) => (
+                  <li key={el.id} className={styles.sub_menu_item}>
+                    <Link
+                      href={
+                        servicesPath === 'services'
+                          ? `${el?.attributes?.slug}`
+                          : `services/${el?.attributes?.slug}`
+                      }
+                    >
+                      {el?.attributes?.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       );
     }
 
     if (menu.link && menu.name) {
       return (
-        <ul className={styles.sub_menu}>
+        <ul className={styles.sub_menu_once}>
           <li className={styles.sub_menu_item}>
             <Link href={menu.link}>{menu.name}</Link>
           </li>
@@ -49,26 +85,29 @@ export const Navigation: FC<NavigationProps> = ({ data }) => {
       {data
         ?.sort((a, b) => a.id - b.id)
         .map((item) => (
-          <li key={item.id} className={styles.menu_item}>
+          <li
+            key={item.id}
+            className={classNames(styles.menu_item, {
+              [styles.active]: pathname === item.attributes.slug
+            })}
+          >
             <Link
               className={pathname === item?.attributes.slug ? styles.active : styles.menu_link}
               href={item.attributes.slug ? item.attributes.slug : '/'}
             >
-              {item.attributes.title}
+              {item?.attributes?.title}
             </Link>
             <div>
               {item?.attributes.icon && (
                 <div>
-                  {activeSubMenu === item.id ? (
-                    <IoChevronDownOutline className={styles.icon} />
-                  ) : (
-                    <IoChevronUpOutline />
-                  )}
+                  <IoChevronDownOutline className={styles.icon} />
                 </div>
               )}
             </div>
 
-            {item?.attributes?.menu && renderSubMenu(item?.attributes?.menu, item.id)}
+            {/* <div className={styles.panel}> */}
+            {item?.attributes?.menu && renderSubMenu(item?.attributes?.menu)}
+            {/* </div> */}
           </li>
         ))}
     </ul>

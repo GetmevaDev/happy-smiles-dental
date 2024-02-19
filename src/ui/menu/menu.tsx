@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import React from 'react';
 
 import type { NavigationData } from '@/types/navigation';
+import type { ServiceCategory } from '@/types/service-page';
 
 import { Button } from '../button/button';
 import { Navigation } from '../navigation/navigation';
@@ -11,9 +12,10 @@ import styles from './menu.module.scss';
 
 interface MenuProps {
   data: NavigationData[];
+  categories: ServiceCategory[];
 }
 
-export const Menu: FC<MenuProps> = ({ data }) => (
+export const Menu: FC<MenuProps> = ({ data, categories }) => (
   <nav className={styles.menu}>
     <div className={styles.top}>
       <div className={styles.info}>
@@ -37,6 +39,6 @@ export const Menu: FC<MenuProps> = ({ data }) => (
 
     <div className={styles.border} />
 
-    <Navigation data={data} />
+    <Navigation categories={categories} data={data} />
   </nav>
 );

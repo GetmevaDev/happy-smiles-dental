@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import { Typography } from '@/ui';
@@ -21,13 +22,15 @@ export const AvailableDoctors = () => (
           <div className={styles.speciality}>Doctor of Dental Surgery</div>
         </div>
       </div>
-      <Image
-        alt='doctor'
-        className={styles.image}
-        height={14}
-        src='/chevron-right.svg'
-        width={23}
-      />
+      <Link href='/doctor-of-dental-surgery'>
+        <Image
+          alt='doctor'
+          className={styles.image}
+          height={14}
+          src='/chevron-right.svg'
+          width={23}
+        />
+      </Link>
     </div>
 
     <Button>Make an appointment</Button>

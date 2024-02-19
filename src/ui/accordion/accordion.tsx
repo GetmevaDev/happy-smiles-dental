@@ -3,6 +3,8 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import type { FaqsData } from '@/types/faqs';
+
 import { AccordionItem } from './accordion-item/accordion-item';
 
 export type AccordionData = {
@@ -10,7 +12,7 @@ export type AccordionData = {
   content: ReactNode;
 };
 
-export function Accordion({ items }: { items: Array<AccordionData> }) {
+export function Accordion({ items }: { items: FaqsData[] }) {
   const [currentIdx, setCurrentIdx] = useState(-1);
   const btnOnClick = (idx: number) => {
     setCurrentIdx((currentValue) => (currentValue !== idx ? idx : -1));
@@ -22,7 +24,7 @@ export function Accordion({ items }: { items: Array<AccordionData> }) {
         <AccordionItem
           key={idx}
           btnOnClick={() => btnOnClick(idx)}
-          data={item}
+          data={item.attributes}
           isOpen={idx === currentIdx}
         />
       ))}

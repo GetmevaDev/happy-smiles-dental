@@ -2,6 +2,7 @@ import { Montserrat, Nunito_Sans } from 'next/font/google';
 
 import '../src/styles/globals.scss';
 import type { RooutObjectNavigation } from '@/types/navigation';
+import type { ServiceCategory } from '@/types/service-page';
 import { Layout } from '@/ui';
 import { fetchAPI } from '@/utils/api/fetchApi';
 
@@ -18,13 +19,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { data } = await fetchAPI<RooutObjectNavigation>('navigations');
+  const categories = await fetchAPI<{ data: ServiceCategory[] }>(`service-categories`);
 
   return (
     <html className={`${mont.variable}`} lang='en'>
       <body>
-        <Layout.Header data={data} />
-        <div className='container'>{children}</div>
-        <Layout.Footer data={data} />
+        <div className='wrapper'>
+          <Layout.Header categories={categories.data} data={data} />
+          <main className='container'>{children}</main>
+          <Layout.Footer data={data} />
+        </div>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import type { FC } from 'react';
 import React, { useEffect, useState } from 'react';
 
 import type { NavigationData } from '@/types/navigation';
+import type { ServiceCategory } from '@/types/service-page';
 import { ROUTES } from '@/utils/constants';
 
 import { Menu } from '../menu/menu';
@@ -14,9 +15,10 @@ import styles from './header.module.scss';
 
 interface HeaderProps {
   data: NavigationData[];
+  categories: ServiceCategory[];
 }
 
-export const Header: FC<HeaderProps> = ({ data }) => {
+export const Header: FC<HeaderProps> = ({ data, categories }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -43,7 +45,7 @@ export const Header: FC<HeaderProps> = ({ data }) => {
         </Link>
 
         <div>
-          <Menu data={data} />
+          <Menu categories={categories} data={data} />
         </div>
       </div>
     </header>
