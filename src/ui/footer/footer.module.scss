@@ -167,10 +167,26 @@
       align-items: center;
     }
 
+    .link_white {
+      font-family: var(--font-general);
+      font-size: 16px;
+      color: var(--main-color);
+      background: #fff;
+      font-weight: 600;
+      line-height: 25px;
+      border: 0.5px solid var(--main-color);
+      letter-spacing: 0.015em;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+    }
+
     .link {
       font-family: var(--font-general);
       font-size: 16px;
       color: #fff;
+      border: 1px solid transparent;
+
       background: var(--main-color);
       font-weight: 600;
       line-height: 25px;

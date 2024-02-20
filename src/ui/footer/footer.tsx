@@ -83,7 +83,7 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
       </div>
       <div className={styles.buttons}>
         <div className={styles.block}>
-          <a className={styles.link} href='tel:(516) 354-7551'>
+          <a className={styles.link_white} href='tel:(516) 354-7551'>
             Click to call
           </a>
         </div>

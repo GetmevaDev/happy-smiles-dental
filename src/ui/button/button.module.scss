@@ -3,19 +3,42 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 25px;
-  background: var(--main-color);
+  background: #dca264;
   cursor: pointer;
   border-radius: 10px;
   letter-spacing: 0.015em;
   color: #ffffff;
-  padding: 15px 30px;
-  text-align: left;
+  padding: 1em 2em;
+  overflow: hidden;
+
+  position: relative;
 
   border: none;
-  outline: none;
+  outline: 2px solid transparent;
 
-  transition: background 0.3s ease;
+  transition: all 800ms;
+
   &:hover {
     background: var(--main-color-hovered);
+    transform: scale(1.05);
+    outline: 2px solid #dca264;
+    box-shadow: 4px 5px 17px -4px #dca264;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #c18648;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+
+  &:hover::before {
+    width: 250%;
   }
 }
