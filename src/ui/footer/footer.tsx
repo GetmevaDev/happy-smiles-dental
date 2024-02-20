@@ -80,10 +80,6 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
             </Link>
           </li>
         </ul>
-
-        {/* <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>
-          Terms of Service
-        </Link> */}
       </div>
       <div className={styles.buttons}>
         <div className={styles.block}>
