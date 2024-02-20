@@ -30,7 +30,11 @@ export const Banner: FC<BannerProps> = ({ title, subTitle, button, image, button
 
           <Typography tag='h1'>{title}</Typography>
 
-          {button && <Button className={styles.btn}>Make an appointment</Button>}
+          {button && (
+            <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+              <Button className={styles.btn}>Make an appointment</Button>
+            </Link>
+          )}
 
           {buttonBack && (
             <button className={styles.btn}>

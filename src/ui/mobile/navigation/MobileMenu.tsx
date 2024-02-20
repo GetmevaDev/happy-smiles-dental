@@ -34,6 +34,11 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
 
   const servicesByCategory = useServicesByCategory(data, categories);
 
+  const closeMenu = () => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 1000);
+  };
   return (
     <div className={styles.mobile_menu}>
       <button className={styles.hamburger} onClick={toggleMenu}>
@@ -58,6 +63,7 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
                       pathname === item?.attributes.slug ? styles.active : styles.menu_link
                     }
                     href={item.attributes.slug ? item.attributes.slug : '/'}
+                    onClick={closeMenu}
                   >
                     {item?.attributes?.title}
                   </Link>
@@ -80,7 +86,7 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
                   item?.attributes?.menu?.name && (
                     <ul>
                       <li className={styles.sub_menu_item}>
-                        <Link href={item?.attributes?.menu?.link}>
+                        <Link href={item?.attributes?.menu?.link} onClick={closeMenu}>
                           {item?.attributes?.menu.name}
                         </Link>
                       </li>
@@ -101,6 +107,7 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
                                     ? `${el?.attributes?.slug}`
                                     : `services/${el?.attributes?.slug}`
                                 }
+                                onClick={closeMenu}
                               >
                                 {el?.attributes?.title}
                               </Link>

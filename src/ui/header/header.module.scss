@@ -56,7 +56,8 @@
 }
 
 @media (max-width: $phoneWidth) {
-  .header_inner {
-    flex-direction: column;
+  .logo {
+    width: 150px;
+    height: 100%;
   }
 }

@@ -24,6 +24,7 @@ export default async function RootLayout({
 
   return (
     <html className={`${mont.variable}`} lang='en'>
+      <link href='/logo.svg' rel='icon' />
       <body>
         <div className='wrapper'>
           <Layout.Header categories={categories?.data} data={data} />

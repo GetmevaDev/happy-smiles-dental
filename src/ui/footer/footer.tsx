@@ -9,6 +9,8 @@ import React from 'react';
 import type { NavigationData } from '@/types/navigation';
 import { ROUTES } from '@/utils/constants';
 
+import { Button } from '../button/button';
+
 import styles from './footer.module.scss';
 
 export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
@@ -32,13 +34,13 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
         </div>
 
         <div className={styles.meva}>
-          <Link href='https://meva.app/'>
+          <Link href='https://getmeva.com/'>
             <Image alt='meva' height={28} src='/meva.png' width={130} />
           </Link>
           <div className={styles.by}>
             Powered by{' '}
             <span>
-              <Link href='https://meva.app/'>Meva</Link>
+              <Link href='https://getmeva.com/'>Meva</Link>
             </span>
           </div>
         </div>
@@ -79,9 +81,21 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
           </li>
         </ul>
 
-        <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>
+        {/* <Link className={styles.terms} href={ROUTES.TERMS_OF_SERVICE}>
           Terms of Service
-        </Link>
+        </Link> */}
+      </div>
+      <div className={styles.buttons}>
+        <div className={styles.block}>
+          <a className={styles.link} href='tel:(516) 354-7551'>
+            Click to call
+          </a>
+        </div>
+        <div className={styles.block}>
+          <a className={styles.link} href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+            Make an appointment
+          </a>
+        </div>
       </div>
     </footer>
   );

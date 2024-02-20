@@ -42,7 +42,7 @@ export const Header: FC<HeaderProps> = ({ data, categories }) => {
     >
       <div className={styles.header_inner}>
         <Link href={ROUTES.ROOT}>
-          <Image alt='logo' height={117} src='/logo.svg' width={295} />
+          <Image alt='logo' className={styles.logo} height={117} src='/logo.svg' width={295} />
         </Link>
 
         <div className={styles.menu}>

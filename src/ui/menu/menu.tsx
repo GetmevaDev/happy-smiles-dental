@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -32,13 +33,19 @@ export const Menu: FC<MenuProps> = ({ data, categories }) => {
             <span className={styles.address}>
               1300 Union Turnpike, Suite 106, New Hyde Park 11040
             </span>
-            <span className={styles.hours}>Working hours</span>
+            <Link href='/contact-us'>
+              <span className={styles.hours}>Working hours</span>
+            </Link>
           </div>
         </div>
 
         <div className={styles.buttons}>
-          <Button>Click to call</Button>
-          <Button className={styles.btn}>Make an appointment</Button>
+          <a href='tel:(516) 354-7551'>
+            <Button>Click to call</Button>
+          </a>
+          <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+            <Button className={styles.btn}>Make an appointment</Button>
+          </Link>
         </div>
       </div>
 

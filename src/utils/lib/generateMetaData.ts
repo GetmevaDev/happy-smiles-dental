@@ -17,8 +17,8 @@ interface Data {
 }
 
 export function generateSeoMetaData(data: Data) {
-  console.log(data, 'data');
   return {
+    favicon: '<link rel="icon" href="/favicon.ico" sizes="any" />',
     title: data?.attributes?.seo?.metaTitle,
     description: data?.attributes?.seo?.metaDescription,
 

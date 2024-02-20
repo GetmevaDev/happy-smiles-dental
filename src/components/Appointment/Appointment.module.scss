@@ -40,11 +40,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid transparent;
-  border-image: linear-gradient(135deg, #b2802f 0%, #fec260 100%);
-  border-image-slice: 1;
+  border: 1px solid var(--main-color);
   height: 55px;
   border-radius: 10px;
+
+  position: relative;
+
+  &:after {
+    content: '';
+    top: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, #ffdf60 0%, rgba(255, 223, 96, 0) 100%);
+  }
 }
 
 .bg_phone_inner {
@@ -64,13 +79,16 @@
 }
 
 .number {
-  font-family: var(--font-mont);
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 39px;
-  letter-spacing: 0.02em;
-  text-align: left;
-  color: #000000;
+  a {
+    font-family: var(--font-mont);
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: underline;
+    line-height: 39px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #000000;
+  }
 }
 
 .call {
@@ -105,6 +123,10 @@
 }
 
 @media (max-width: $phoneWidth) {
+  .appointment {
+    margin-top: 100px;
+  }
+
   .title {
     font-size: 40px;
     line-height: 50px;

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React, { useRef } from 'react';
 
@@ -26,20 +27,22 @@ export const Appointment: FC<AppointmentProps> = ({ title, description, image, p
         <div className={styles.description}>{description}</div>
 
         <div className={styles.make}>
-          <Button>Make an appointment</Button>
+          <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+            <Button>Make an appointment</Button>
+          </Link>
 
           <div className={styles.phone}>
             <div className={styles.bg_phone}>
-              <div className={styles.bg_phone_inner}>
-                <Image alt='phone' height={24} src='/phone.svg' width={24} />
-              </div>
+              <Image alt='phone' height={24} src='/phone.svg' width={24} />
             </div>
 
             <div className={styles.text}>
               <a className={styles.call} href={`tel: ${phone}`}>
                 Click to call
               </a>
-              <div className={styles.number}>{phone}</div>
+              <div className={styles.number}>
+                <a href={`tel: ${phone}`}>{phone}</a>
+              </div>
             </div>
           </div>
         </div>

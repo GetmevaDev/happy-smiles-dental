@@ -32,7 +32,6 @@
   border: none;
   outline: none;
   padding-top: 10px;
-  background: transparent;
 }
 
 .btn_link {
@@ -67,5 +66,11 @@
   .image {
     width: 100%;
     object-fit: cover;
+  }
+}
+
+@media (max-width: $tableWidth) {
+  .section {
+    margin-top: 100px;
   }
 }

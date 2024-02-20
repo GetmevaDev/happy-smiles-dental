@@ -32,7 +32,8 @@ export const AvailableDoctors = () => (
         />
       </Link>
     </div>
-
-    <Button>Make an appointment</Button>
+    <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+      <Button>Make an appointment</Button>
+    </Link>
   </div>
 );
