@@ -34,7 +34,7 @@ export function generateSeoMetaData(data: Data) {
       card: 'summary_large_image',
       title: data?.attributes?.seo?.metaTitle,
       description: data?.attributes?.seo?.metaDescription,
-      images: {
+      image: {
         url: data?.attributes?.seo?.metaImage?.data?.attributes?.url
       }
     },
