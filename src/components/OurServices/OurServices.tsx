@@ -2,6 +2,7 @@
 
 import type { FC } from 'react';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import type { OurServicesDataI } from '@/types/home-page';
 import { Typography } from '@/ui';
@@ -37,8 +38,14 @@ export const OurServices: FC<OurServicesProps> = ({ title, services }) => {
     acc[category].push(service);
     return acc;
   }, {});
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   return (
-    <section className={styles.services}>
+    <section ref={ref} className={`${styles.services} ${inView ? 'fadeInRight' : ''}`}>
       <Typography className={styles.title} tag='h2'>
         {title}
       </Typography>

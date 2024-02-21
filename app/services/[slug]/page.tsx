@@ -12,6 +12,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return generateSeoMetaData(data);
 }
 
+export async function generateStaticParams() {
+  const services = await fetchAPI<{ data: DataService[] }>(`services`);
+
+  return services?.data?.map((service) => ({
+    slug: service?.attributes?.slug
+  }));
+}
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const { data } = await fetchAPI<RootServicePage>(`services/find-by-slug/${params.slug}`);
 

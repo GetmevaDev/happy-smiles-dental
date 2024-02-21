@@ -1,3 +1,5 @@
+import type { Seo } from './seo';
+
 export interface PostPageRoot {
   data: PostPageData;
 }
@@ -10,6 +12,8 @@ export interface PostPageData {
 export interface PostPageAttributes {
   content: string;
   slug: string;
+  seo: Seo;
+
   title: string;
   subTitle: string;
   bgImage: {

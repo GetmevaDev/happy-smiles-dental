@@ -1,8 +1,10 @@
+@import 'src/styles/variables.scss';
+
 .hamburger {
   background: none;
   border: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   padding: 10px;
@@ -129,4 +131,16 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+@media (max-width: $smDesktopWidth) {
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
 }

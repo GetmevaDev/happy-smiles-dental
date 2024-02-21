@@ -103,7 +103,7 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
                             <li key={el.id} className={styles.sub_menu_item}>
                               <Link
                                 href={
-                                  servicesPath === 'services'
+                                  servicesPath === 'services' && 'blog'
                                     ? `${el?.attributes?.slug}`
                                     : `services/${el?.attributes?.slug}`
                                 }

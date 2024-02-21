@@ -2,15 +2,22 @@ import { Banner } from '@/components';
 import { BlogPosts } from '@/components/BlogPosts/BlogPosts';
 import type { RootBlogPage } from '@/types/blog-page';
 import type { RootHomePageI } from '@/types/home-page';
-import type { PostPageData } from '@/types/post';
 import type { RootPostsPage } from '@/types/posts';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
 export async function generateMetadata() {
-  const { data } = await fetchAPI<RootHomePageI>('home-page');
+  const { data } = await fetchAPI<RootHomePageI>('blog-page');
 
   return generateSeoMetaData(data);
+}
+
+export async function generateStaticParams() {
+  const posts = await fetchAPI<RootPostsPage>(`posts`, false);
+
+  return posts?.data?.map((post) => ({
+    slug: post?.attributes?.slug
+  }));
 }
 
 export default async function Page({
