@@ -132,3 +132,69 @@
     line-height: 50px;
   }
 }
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image_inner {
+  position: relative;
+}
+
+.image {
+  // animation: rotateImage 10s linear infinite;
+}
+
+.tooth1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  animation: orbitTooth1 5s linear infinite;
+}
+
+// .tooth2 {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   animation: orbit 2s linear infinite;
+// }
+
+// .tooth3 {
+//   position: absolute;
+//   top: 50%;
+//   animation: orbit 2s linear infinite;
+// }
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(425px, -425px) rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+@keyframes orbitTooth1 {
+  0% {
+    transform: rotate(0deg) translate(20px, 500px) rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) translate(20px, 300px) rotate(-90deg);
+  }
+  50% {
+    transform: rotate(180deg) translate(20px, 100px) rotate(-180deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(20px, 500px) rotate(-360deg);
+  }
+}

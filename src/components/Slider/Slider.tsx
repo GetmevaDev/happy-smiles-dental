@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 import React, { useCallback, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { Navigation } from 'swiper/modules';
 import type { SwiperClass } from 'swiper/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,14 +24,20 @@ export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, ca
   const { swiperRef, setSwiperRef, isBeginning, isEnd, handlePrevious, handleNext } =
     useSwiperControl();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   return (
     <section
+      ref={ref}
       className={styles.slider}
       style={{
         backgroundImage: 'url(/slider.png)'
       }}
     >
-      <div className={styles.slider_wrap}>
+      <div className={`${styles.slider_wrap} ${inView ? 'fadeInUp' : ''}`}>
         {title && <h2 className={styles.title}>{title}</h2>}
 
         <div className={styles.slider_inner}>

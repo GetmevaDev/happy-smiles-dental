@@ -41,7 +41,7 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
                   <li key={el.id} className={styles.sub_menu_item}>
                     <Link
                       href={
-                        servicesPath === 'services'
+                        servicesPath === 'services' && 'blog'
                           ? `${el?.attributes?.slug}`
                           : `services/${el?.attributes?.slug}`
                       }

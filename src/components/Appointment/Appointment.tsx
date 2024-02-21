@@ -48,7 +48,33 @@ export const Appointment: FC<AppointmentProps> = ({ title, description, image, p
         </div>
       </div>
 
-      <Image alt='tooth' className={styles.image} height={502} src={image} width={501} />
+      <div className={styles.image_inner}>
+        <Image alt='tooth' className={styles.image} height={502} src={image} width={501} />
+
+        {/* <div className={styles.tooths}>
+          <Image
+            alt='tooth1'
+            className={styles.tooth1}
+            height={50}
+            src='/tooth-small.png'
+            width={50}
+          />
+          <Image
+            alt='tooth2'
+            className={styles.tooth2}
+            height={50}
+            src='/tooth-small.png'
+            width={50}
+          />
+          <Image
+            alt='tooth3'
+            className={styles.tooth3}
+            height={50}
+            src='/tooth-small.png'
+            width={50}
+          />
+        </div> */}
+      </div>
     </section>
   );
 };

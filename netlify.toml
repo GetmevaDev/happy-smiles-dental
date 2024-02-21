@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
+
+[dev]
+  command = "npm run dev"
 
 [[plugins]]
 # netlify nextjs plugin that helps nextjs ISR and SSR and API routes, etc
