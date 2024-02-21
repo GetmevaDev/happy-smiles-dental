@@ -6,6 +6,8 @@ import type { RootPostsPage } from '@/types/posts';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata() {
   const { data } = await fetchAPI<RootHomePageI>('blog-page');
 
