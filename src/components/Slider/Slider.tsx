@@ -26,7 +26,7 @@ export const Slider: FC<{ title?: string; cards: ReviewsData[] }> = ({ title, ca
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.2
   });
 
   return (

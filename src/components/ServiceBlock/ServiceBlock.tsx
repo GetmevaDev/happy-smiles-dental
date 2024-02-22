@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import React from 'react';
 
 import type { Category, DataService, ServiceCategory } from '@/types/service-page';
+import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 import { AvailableDoctors } from './AvailableDoctors/AvailableDoctors';
 import styles from './ServiceBlock.module.scss';
@@ -15,6 +16,7 @@ interface ServiceBlockProps {
 }
 
 export const ServiceBlock: FC<ServiceBlockProps> = ({ services, categories, content }) => {
+  // const query = useMediaQuery('min-width: 760px');
   const groupedServices = categories.reduce(
     (acc, category) => {
       acc[category.id] = services.filter(

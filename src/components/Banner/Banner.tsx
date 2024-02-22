@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
@@ -37,7 +38,7 @@ export const Banner: FC<BannerProps> = ({ title, subTitle, button, image, button
           )}
 
           {buttonBack && (
-            <button className={styles.btn}>
+            <button className={classNames(styles.btn, buttonBack && styles.buttonBack)}>
               <Link className={styles.btn_link} href='/blog'>
                 <span>
                   <Image

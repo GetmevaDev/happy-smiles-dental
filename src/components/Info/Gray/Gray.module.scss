@@ -59,6 +59,14 @@
     padding: 20px;
   }
 
+  .right {
+    align-items: center;
+
+    button {
+      width: 100%;
+    }
+  }
+
   .block {
     flex-direction: column-reverse;
     align-items: normal;

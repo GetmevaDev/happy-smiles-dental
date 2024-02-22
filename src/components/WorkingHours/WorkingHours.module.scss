@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .section {
   max-width: 1280px;
   margin: 0 auto;
@@ -59,4 +61,22 @@
   line-height: 54px;
   letter-spacing: -0.02em;
   text-align: left;
+}
+
+@media (max-width: $phoneWidth) {
+  .day {
+    font-size: 20px;
+  }
+
+  .hours_inner {
+    gap: 0;
+  }
+
+  .time {
+    font-size: 20px;
+  }
+
+  .address {
+    font-size: 20px;
+  }
 }

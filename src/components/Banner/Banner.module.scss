@@ -69,8 +69,27 @@
   }
 }
 
+.buttonBack {
+  background: transparent;
+}
+
 @media (max-width: $tableWidth) {
   .section {
     margin-top: 100px;
+  }
+
+  .btn_link {
+    gap: 30px;
+    align-items: center;
+  }
+
+  .titles {
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h4,
+    h1 {
+      text-align: center;
+    }
   }
 }

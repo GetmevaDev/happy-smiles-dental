@@ -13,7 +13,8 @@
 .bar {
   height: 2px;
   width: 25px;
-  background-color: #333;
+  background-color: var(--main-color);
+
   transition: all 0.3s ease;
 }
 
@@ -91,7 +92,7 @@
 
 .hamburger {
   position: absolute;
-  top: 0;
+  top: 20px;
   right: 0;
   z-index: 2000;
 }
