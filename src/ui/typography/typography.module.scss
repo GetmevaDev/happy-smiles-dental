@@ -38,6 +38,30 @@
   text-align: left;
 }
 
+@media (max-width: $smDesktopWidth) {
+  .large {
+    font-size: 50px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .medium {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .small {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .mini {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
 @media (max-width: $phoneWidth) {
   .large {
     font-size: 30px;

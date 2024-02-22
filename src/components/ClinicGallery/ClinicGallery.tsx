@@ -29,13 +29,20 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
           Clinic Gallery
         </Typography>
 
-        <div>
+        <div className={styles.swiper}>
           <Swiper
             breakpoints={{
               300: {
                 slidesPerView: 1
               },
               900: {
+                slidesPerView: 1
+              },
+
+              1200: {
+                slidesPerView: 1
+              },
+              1400: {
                 slidesPerView: 2
               }
             }}
@@ -50,7 +57,7 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
             spaceBetween={30}
           >
             {images?.map((image) => (
-              <SwiperSlide key={image.id}>
+              <SwiperSlide key={image.id} className={styles.swiper_slide}>
                 <Image
                   alt='gallery'
                   className={styles.image}
