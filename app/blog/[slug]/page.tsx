@@ -1,5 +1,3 @@
-import type { Metadata, ResolvingMetadata } from 'next';
-
 import { Banner } from '@/components';
 import { Post } from '@/components/Post/Post';
 import type { PostPageRoot } from '@/types/post';
@@ -34,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         title={data?.attributes?.title}
       />
 
-      <Post content={data?.attributes?.content} createdAt={data?.attributes?.createdAt} />
+      <Post content={data?.attributes?.content} />
     </div>
   );
 }

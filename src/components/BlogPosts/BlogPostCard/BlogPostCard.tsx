@@ -15,7 +15,6 @@ export const BlogPostCard: FC<{ post: RootPostsPageAttributes }> = ({ post }) =>
     <div className={styles.description}>{truncateText(post?.content, 100)}</div>
 
     <div className={styles.bottom}>
-      <div className={styles.date}>{dayjs(post?.createdAt).format('D MMMM YYYY	')}</div>
       <button className={styles.read}>
         <Link className={styles.link} href={`/blog/${post?.slug}`}>
           Read more
