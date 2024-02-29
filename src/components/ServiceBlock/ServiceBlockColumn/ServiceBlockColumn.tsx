@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams, usePathname } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -18,6 +18,7 @@ export const ServiceBlockColumn: FC<{ services: DataService[] }> = ({ services }
     <div className={styles.column}>
       {services.map((service) => (
         <Link
+          key={service.id}
           className={classNames(
             styles.card,
             slug === service?.attributes?.slug ? styles.card_active : styles.card_unactive

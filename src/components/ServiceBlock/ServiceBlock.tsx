@@ -1,7 +1,11 @@
-import type { FC } from 'react';
-import React from 'react';
+'use client';
 
-import type { Category, DataService, ServiceCategory } from '@/types/service-page';
+import Image from 'next/image';
+import type { FC } from 'react';
+import React, { useMemo, useState } from 'react';
+
+import type { DataService, ServiceCategory } from '@/types/service-page';
+import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 import { AvailableDoctors } from './AvailableDoctors/AvailableDoctors';
 import styles from './ServiceBlock.module.scss';
@@ -15,23 +19,54 @@ interface ServiceBlockProps {
 }
 
 export const ServiceBlock: FC<ServiceBlockProps> = ({ services, categories, content }) => {
-  const groupedServices = categories.reduce(
-    (acc, category) => {
-      acc[category.id] = services.filter(
-        (service) => service.attributes.service_category.data.id === category.id
-      );
-      return acc;
-    },
-    {} as Record<number, DataService[]>
+  const [categoriesExpandedState, setCategoriesExpandedState] = useState<{
+    [key: number]: boolean;
+  }>(categories.reduce((acc, curr) => ({ ...acc, [curr.id]: false }), {}));
+
+  const groupedServices = useMemo(
+    () =>
+      categories.reduce(
+        (acc, category) => {
+          acc[category.id] = services.filter(
+            (service) => service.attributes.service_category.data.id === category.id
+          );
+          return acc;
+        },
+        {} as Record<number, DataService[]>
+      ),
+    [categories]
   );
+  const isDesktop = useMediaQuery('(min-width: 1100px)');
+
+  const toggleCategoryExpanded = (id: number) => {
+    if (!isDesktop) {
+      setCategoriesExpandedState({
+        ...categoriesExpandedState,
+        [id]: !categoriesExpandedState[id]
+      });
+    }
+  };
 
   return (
     <section className={styles.service}>
       <div className={styles.left}>
         {categories.map((category) => (
           <div key={category.id} className={styles.category}>
-            <h2 className={styles.sub_title}>{category.attributes.category}</h2>
-            <ServiceBlockColumn services={groupedServices[category.id] || []} />
+            <h2 className={styles.sub_title} onClick={() => toggleCategoryExpanded(category.id)}>
+              {category.attributes.category}
+              <div className={styles.expand_button}>
+                <Image
+                  alt='chevron'
+                  className={styles.svg}
+                  height={20}
+                  src={`/chevron-${categoriesExpandedState[category.id] ? 'up' : 'down'}.svg`}
+                  width={20}
+                />
+              </div>
+            </h2>
+            {(categoriesExpandedState[category.id] || isDesktop) && (
+              <ServiceBlockColumn services={groupedServices[category.id] || []} />
+            )}
           </div>
         ))}
       </div>

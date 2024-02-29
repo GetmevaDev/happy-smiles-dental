@@ -19,9 +19,7 @@ interface BannerProps {
 export const Banner: FC<BannerProps> = ({ title, subTitle, button, image, buttonBack }) => (
   <section className={styles.section}>
     <div className={styles.image_inner}>
-      {image && (
-        <Image alt='banner' className={styles.image} height={400} src={image} width={1480} />
-      )}
+      {image && <Image alt='banner' className={styles.image} layout='fill' src={image} />}
       <div className={styles.container}>
         <div className={styles.titles}>
           <Typography size='mini' tag='h4'>

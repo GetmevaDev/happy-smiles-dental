@@ -1,21 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { FC } from 'react';
-import { useState } from 'react';
 
 import styles from './pagination.module.scss';
 
-export const Pagination: FC<{ totalPages: number }> = ({ totalPages }) => {
-  const searchParams = useSearchParams();
-  const currentPage = Number(searchParams.get('page')) || 1;
-
-  const router = useRouter();
-
+export const Pagination: FC<{
+  currentPage: number;
+  onPageChange: (page: number) => void;
+  totalPages: number;
+}> = ({ totalPages, currentPage, onPageChange }) => {
   const goToPage = (page: number) => {
-    // setCurrentPage(page);
-    router.push(`/blog/?page=${page}`);
+    onPageChange(page);
   };
 
   return (
