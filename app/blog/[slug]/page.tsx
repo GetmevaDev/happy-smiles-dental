@@ -12,10 +12,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export async function generateStaticParams() {
-  const { data } = await fetchAPI<RootPostsPage>(`posts`);
+  const { data } = await fetchAPI<RootPostsPage>(
+    `posts?sort[0]=createdAt:desc&pagination[limit]=1000&populate=deep`,
+    false
+  );
 
   return data?.map((post) => ({
-    slug: post?.attributes?.slug
+    slug: String(post?.attributes?.slug)
   }));
 }
 

@@ -19,7 +19,7 @@ export const BlogPosts: FC<{ posts: RootPostsPageData[]; meta: Meta }> = () => {
 
   useEffect(() => {
     fetchAPI<RootPostsPage>(
-      `posts?pagination[page]=${currentPage}&pagination[pageSize]=6`,
+      `posts?pagination[page]=${currentPage}&pagination[pageSize]=6&sort[0]=createdAt:desc`,
       false
     ).then((posts) => {
       setPosts(posts.data);
