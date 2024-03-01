@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 .pagination_container {
   display: flex;
   justify-content: center;
@@ -95,3 +97,17 @@
   color: #2a2a2a;
   text-align: left;
 }
+
+@media (max-width: $smTableWidth) {
+  .pagination_container {
+    row-gap: 10px;
+    flex-direction: column;
+  }
+  .page_list {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+

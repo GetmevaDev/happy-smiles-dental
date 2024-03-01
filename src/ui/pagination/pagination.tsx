@@ -36,17 +36,17 @@ export const Pagination: FC<{
             </div>
           );
         })}
+        {currentPage < totalPages && (
+          <button className={styles.page_button_next} onClick={() => goToPage(currentPage + 1)}>
+            <Image alt='chevron' height={10} src='/chevron-white.svg' width={10} />
+          </button>
+        )}
+        {currentPage < totalPages && (
+          <button className={styles.page_button_last} onClick={() => goToPage(totalPages)}>
+            Last
+          </button>
+        )}
       </div>
-      {currentPage < totalPages && (
-        <button className={styles.page_button_next} onClick={() => goToPage(currentPage + 1)}>
-          <Image alt='chevron' height={10} src='/chevron-white.svg' width={10} />
-        </button>
-      )}
-      {currentPage < totalPages && (
-        <button className={styles.page_button_last} onClick={() => goToPage(totalPages)}>
-          Last
-        </button>
-      )}
     </div>
   );
 };
