@@ -1,19 +1,37 @@
+'use client';
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import type { RootPostsPage, RootPostsPageData } from '@/types/posts';
+import { fetchAPI } from '@/utils/api/fetchApi';
 
 import styles from './RecentPosts.module.scss';
 
-export const RecentPosts = () => (
-  <div className={styles.recent}>
-    <h5 className={styles.title}>Recent Posts</h5>
+export const RecentPosts = () => {
+  const [posts, setPosts] = useState<RootPostsPageData[]>([]);
 
-    <div className={styles.cards}>
-      <div className={styles.card}>
-        <div className={styles.card_title}>
-          <Link href={`/blog${``}`}>Aetna Dentist in New Hyde Park / Lake Success</Link>
-        </div>
-        <div className={styles.date}>6 December 2023</div>
+  useEffect(() => {
+    fetchAPI<RootPostsPage>(`posts?sort[0]=createdAt:desc&pagination[limit]=5`, false).then(
+      (posts) => {
+        setPosts(posts.data);
+      }
+    );
+  }, []);
+
+  return (
+    <div className={styles.recent}>
+      <h5 className={styles.title}>Recent Posts</h5>
+
+      <div className={styles.cards}>
+        {posts.map((post) => (
+          <div className={styles.card}>
+            <div className={styles.card_title}>
+              <Link href={`/blog/${post.attributes.slug}`}>{post.attributes.title}</Link>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-);
+  );
+};

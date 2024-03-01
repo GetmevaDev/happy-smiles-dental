@@ -20,8 +20,7 @@ import { ArrowButton } from '../ArrowButtons/ArrowButton';
 import styles from './ClinicGallery.module.scss';
 
 export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
-  const { swiperRef, setSwiperRef, isBeginning, isEnd, handlePrevious, handleNext } =
-    useSwiperControl();
+  const { setSwiperRef, isBeginning, isEnd, handlePrevious, handleNext } = useSwiperControl();
   return (
     <div className={styles.gallery}>
       <div className={styles.gallery_inner}>
@@ -35,7 +34,7 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
               300: {
                 slidesPerView: 1
               },
-              900: {
+              1200: {
                 slidesPerView: 2
               }
             }}
@@ -51,13 +50,15 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
           >
             {images?.map((image) => (
               <SwiperSlide key={image.id}>
-                <Image
-                  alt='gallery'
-                  className={styles.image}
-                  height={400}
-                  src={image?.attributes?.url}
-                  width={625}
-                />
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                  <Image
+                    alt='gallery'
+                    className={styles.image}
+                    height={400}
+                    src={image?.attributes?.url}
+                    width={650}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
