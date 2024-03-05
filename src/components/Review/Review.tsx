@@ -26,7 +26,7 @@ export const Review: FC<{ leaveForm?: boolean; review: IReview }> = ({ leaveForm
     setReviewSending(true);
 
     emailjs
-      .sendForm(review.serviceId, review.templateId, form.current, {
+      .sendForm(review.serviceId, review.templateId, form.current || '', {
         publicKey: review.publicKey
       })
       .then(
@@ -36,7 +36,7 @@ export const Review: FC<{ leaveForm?: boolean; review: IReview }> = ({ leaveForm
         },
         (error) => {
           setReviewSending(false);
-          console.log('FAILED...', error.text);
+          console.log('FAILED...', error);
         }
       );
   };
