@@ -34,7 +34,7 @@ export default async function Page() {
         title={data?.attributes?.ChooseBlock?.title}
       />
       <OurServices services={data?.attributes?.OurServices?.services?.data} title='Our services' />
-      <LeaveForm />
+      <LeaveForm review={data?.attributes?.Review} />
     </div>
   );
 }

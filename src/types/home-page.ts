@@ -38,6 +38,7 @@ export interface HomePageI {
       }[];
     };
   };
+  Review: Review;
 }
 
 export interface Banner {
@@ -123,4 +124,13 @@ export interface ServiceSlug {
       slug: string;
     };
   };
+}
+
+export interface Review {
+  id: number;
+  googleReviewUrl: string;
+  serviceId: string;
+  templateId: string;
+  publicKey: string;
+  feedbackReceivedMessage: string;
 }

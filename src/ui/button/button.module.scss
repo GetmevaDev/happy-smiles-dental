@@ -42,3 +42,20 @@
     width: 250%;
   }
 }
+
+.disabled {
+  background: gray;
+  &:hover {
+    background: gray !important;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  &::before {
+    background-color: gray !important;
+  }
+  
+  &:hover::before {
+    width: 0;
+  }
+}
