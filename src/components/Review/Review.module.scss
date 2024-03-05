@@ -1,7 +1,9 @@
 @import 'src/styles/variables.scss';
 
 .reviewWrapper {
-  width: 50%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
 }
 
 .on {

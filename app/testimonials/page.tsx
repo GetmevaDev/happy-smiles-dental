@@ -21,7 +21,7 @@ export default async function Page() {
         subTitle={data?.attributes?.banner?.subTitle}
         title={data?.attributes?.banner?.title}
       />
-      <LeaveReview />
+      <LeaveReview review={data?.attributes?.Review} />
       <div className='padding'>
         <Slider cards={reviews?.data} />
       </div>

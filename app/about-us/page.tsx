@@ -1,5 +1,3 @@
-import type { Metadata, ResolvingMetadata } from 'next';
-
 import { Banner, Brightness } from '@/components';
 import { Awards } from '@/components/Awards/Awards';
 import { ClinicGallery } from '@/components/ClinicGallery/ClinicGallery';
@@ -48,7 +46,7 @@ export default async function Page() {
 
       <ClinicGallery images={data?.attributes?.ClinicGallery?.images.data} />
 
-      <LeaveForm />
+      <LeaveForm review={data?.attributes?.Review} />
     </div>
   );
 }

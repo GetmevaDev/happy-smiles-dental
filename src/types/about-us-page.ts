@@ -1,4 +1,4 @@
-import type { Block } from './home-page';
+import type { Block, Review } from './home-page';
 import type { Seo } from './seo';
 import type { BannerTop } from './service-page';
 
@@ -18,6 +18,7 @@ export interface AboutUsPageAttributes {
   MeetTheDoctor: MeetTheDoctor;
   ClinicGallery: ClinicGalleryI;
   seo: Seo;
+  Review: Review;
 }
 
 export interface MeetTheDoctor {

@@ -1,4 +1,4 @@
-import type { Slider } from './home-page';
+import type { Review, Slider } from './home-page';
 import type { Seo } from './seo';
 import type { BannerTop } from './service-page';
 
@@ -16,4 +16,5 @@ export interface TestimonialsPageAttributes {
   slider: Slider;
   videoUrl: string;
   seo: Seo;
+  Review: Review;
 }
