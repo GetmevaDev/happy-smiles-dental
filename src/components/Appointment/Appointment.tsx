@@ -49,8 +49,8 @@ export const Appointment: FC<AppointmentProps> = ({ title, description, image, p
       </div>
 
       <div className={styles.image_inner}>
-        <Image alt='tooth' className={styles.image} height={502} src={image} width={501} />
-
+        {/* <Image alt='tooth' className={styles.image} height={502} src={image} width={501} /> */}
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className={styles.image} frameBorder="0" height="401" src="https://www.youtube.com/embed/4B0rbthMnXQ?si=CEWOF8L8vUAhUJXN" title="YouTube video player" width="501" />
         {/* <div className={styles.tooths}>
           <Image
             alt='tooth1'
