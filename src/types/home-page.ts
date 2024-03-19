@@ -16,6 +16,13 @@ export interface HomePageI {
   Banner: Banner;
   Slider: Slider;
   seo: Seo;
+  video: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
 
   ChooseBlock: ChooseBlock;
   OurServices: {

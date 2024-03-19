@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/media-has-caption */
+
 'use client';
 
 import Image from 'next/image';
@@ -13,10 +15,11 @@ interface AppointmentProps {
   title?: string;
   description?: string;
   image: string;
+  video?: string;
   phone?: string;
 }
 
-export const Appointment: FC<AppointmentProps> = ({ title, description, image, phone }) => {
+export const Appointment: FC<AppointmentProps> = ({ title, video, description, image, phone }) => {
   const sectionRef = useRef(null);
 
   return (
@@ -49,31 +52,11 @@ export const Appointment: FC<AppointmentProps> = ({ title, description, image, p
       </div>
 
       <div className={styles.image_inner}>
+        <video autoPlay controls height='302' width='500'>
+          <source src={video} type='video/mp4' />
+        </video>
+
         {/* <Image alt='tooth' className={styles.image} height={502} src={image} width={501} /> */}
-        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className={styles.image} frameBorder="0" height="401" src="https://www.youtube.com/embed/4B0rbthMnXQ?si=CEWOF8L8vUAhUJXN" title="YouTube video player" width="501" />
-        {/* <div className={styles.tooths}>
-          <Image
-            alt='tooth1'
-            className={styles.tooth1}
-            height={50}
-            src='/tooth-small.png'
-            width={50}
-          />
-          <Image
-            alt='tooth2'
-            className={styles.tooth2}
-            height={50}
-            src='/tooth-small.png'
-            width={50}
-          />
-          <Image
-            alt='tooth3'
-            className={styles.tooth3}
-            height={50}
-            src='/tooth-small.png'
-            width={50}
-          />
-        </div> */}
       </div>
     </section>
   );

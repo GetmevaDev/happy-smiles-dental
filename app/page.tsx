@@ -5,15 +5,16 @@ import type { ReviewsRoot } from '@/types/reviews';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
-export async function generateMetadata() {
-  const { data } = await fetchAPI<RootHomePageI>('home-page');
+// export async function generateMetadata() {
+//   const { data } = await fetchAPI<RootHomePageI>('home-page');
 
-  return generateSeoMetaData(data);
-}
+//   return generateSeoMetaData(data);
+// }
 
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
   const reviews = await fetchAPI<ReviewsRoot>('reviews');
+
   return (
     <div>
       <Appointment
@@ -21,6 +22,7 @@ export default async function Page() {
         image={data?.attributes?.Block?.image?.data?.attributes?.url}
         phone={data?.attributes?.Block?.phone}
         title={data?.attributes?.Block?.title}
+        video={data?.attributes?.video?.data?.attributes?.url}
       />
       <Block
         description={data?.attributes?.Banner?.description}
