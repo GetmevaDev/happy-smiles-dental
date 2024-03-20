@@ -2,10 +2,30 @@
 
 .appointment {
   display: flex;
-  max-width: 1280px;
   margin: 200px auto 70px;
   justify-content: space-between;
   gap: 50px;
+  z-index: 15;
+}
+
+.image_inner {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.info {
+  position: relative;
+  z-index: 2;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  padding-bottom: 200px;
 }
 
 .title {
@@ -14,7 +34,7 @@
   font-weight: 600;
   line-height: 91px;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: #fff;
   text-align: left;
   padding-bottom: 50px;
 }
@@ -24,6 +44,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
+  color: #fff;
   letter-spacing: 0.015em;
   text-align: left;
   padding-bottom: 55px;
@@ -87,7 +108,7 @@
     line-height: 39px;
     letter-spacing: 0.02em;
     text-align: left;
-    color: #000000;
+    color: #fff;
   }
 }
 
@@ -146,13 +167,5 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-.image_inner {
-  width: 100%;
-  height: 100%;
-  video {
-    border-radius: 10px;
   }
 }

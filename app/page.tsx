@@ -5,11 +5,11 @@ import type { ReviewsRoot } from '@/types/reviews';
 import { fetchAPI } from '@/utils/api/fetchApi';
 import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 
-// export async function generateMetadata() {
-//   const { data } = await fetchAPI<RootHomePageI>('home-page');
+export async function generateMetadata() {
+  const { data } = await fetchAPI<RootHomePageI>('home-page');
 
-//   return generateSeoMetaData(data);
-// }
+  return generateSeoMetaData(data);
+}
 
 export default async function Page() {
   const { data } = await fetchAPI<RootHomePageI>('home-page');
