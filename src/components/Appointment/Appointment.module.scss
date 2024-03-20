@@ -13,6 +13,29 @@
   z-index: 2;
 }
 
+.expand_button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.expand {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  gap: 15px;
+}
+
+.expand_text {
+  font-family: var(--font-mont);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23.25px;
+  letter-spacing: 0.015em;
+  text-align: left;
+}
+
 .title {
   font-family: var(--font-general);
   font-size: 82px;
