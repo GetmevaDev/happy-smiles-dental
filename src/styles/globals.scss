@@ -20,6 +20,16 @@
   margin: 0 auto;
 }
 
+video::-webkit-media-controls {
+  z-index: 99999;
+  position: relative;
+}
+
+video::-webkit-media-controls-volume-slider {
+  z-index: 10;
+  position: relative;
+}
+
 html,
 body {
   padding: 0;
