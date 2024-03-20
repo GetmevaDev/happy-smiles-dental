@@ -26,7 +26,7 @@ export const Appointment: FC<AppointmentProps> = ({ title, video, description, i
     <section className={styles.appointment}>
       <div className={styles.info}>
         <h1 className={styles.title}>
-          Happy Smiles Dental In <div>New Hyde Park</div>
+          Happy Smiles Dental <div>New Hyde </div>
         </h1>
 
         <div className={styles.description}>{description}</div>
@@ -57,7 +57,6 @@ export const Appointment: FC<AppointmentProps> = ({ title, video, description, i
         <video
           autoPlay
           className={styles.videoBackground}
-          controls
           loop
           muted
           playsInline
