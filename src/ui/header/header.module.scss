@@ -11,14 +11,33 @@
   padding: 20px 0;
 }
 
+// .header {
+//   width: 100%;
+//   position: absolute;
+//   z-index: 1000;
+//   top: 0;
+//   left: 0;
+//   background-color: #fff;
+//   transition: all 0.3s ease;
+// }
+
 .header {
-  width: 100%;
-  position: absolute;
-  z-index: 1000;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff;
-  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 1s ease; /* Add a transition property */
+
+  &.fixed {
+    transform: translateY(0%);
+  }
+
+  &.slideIn {
+    transform: translateY(0);
+  }
 }
 
 .fixed {
