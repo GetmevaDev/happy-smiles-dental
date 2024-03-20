@@ -31,7 +31,7 @@ export const Appointment: FC<AppointmentProps> = ({ title, video, description, i
       <div className={styles.info_block}>
         <div className={styles.info}>
           <h1 className={styles.title}>
-            Happy Smiles Dental <div>New Hyde </div>
+            Happy Smiles Dental <div>New Hyde Park</div>
           </h1>
 
           <div className={styles.description}>{description}</div>
