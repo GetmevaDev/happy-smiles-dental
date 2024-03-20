@@ -14,7 +14,7 @@
 }
 
 .info {
-  padding-top: 70px;
+  padding-top: 10px;
   position: relative;
   z-index: 2;
 }
@@ -23,11 +23,9 @@
   position: absolute;
   top: 0;
   left: 0;
-
   height: 100%;
   width: 100%;
   object-fit: cover;
-
   z-index: 1;
 }
 
