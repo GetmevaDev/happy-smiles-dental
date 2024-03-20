@@ -5,7 +5,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 import { Button } from '@/ui/button/button';
@@ -22,10 +22,8 @@ interface AppointmentProps {
   phone?: string;
 }
 
-export const Appointment: FC<AppointmentProps> = ({ title, video, description, image, phone }) => {
+export const Appointment: FC<AppointmentProps> = memo(({ video, description, phone }) => {
   const handle = useFullScreenHandle();
-
-  console.log(handle, 'handle');
 
   return (
     <div className={styles.appointment_inner}>
@@ -90,10 +88,10 @@ export const Appointment: FC<AppointmentProps> = ({ title, video, description, i
                 </defs>
               </svg>
             </button>
-            <div className={styles.expand_text}>Enter fullscreen</div>
+            <div className={styles.expand_text}>Fullscreen</div>
           </div>
         </div>
       </div>
     </div>
   );
-};
+});
