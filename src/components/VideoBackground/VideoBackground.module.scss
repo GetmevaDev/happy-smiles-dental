@@ -1,0 +1,11 @@
+.video_background {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video {
+  min-width: 100%;
+  min-height: 650px;
+}

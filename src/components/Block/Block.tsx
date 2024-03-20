@@ -21,7 +21,7 @@ export const Block: FC<BlockProps> = ({ title, description, image }) => {
     threshold: 0.1
   });
   return (
-    <section ref={ref}>
+    <section ref={ref} className={styles.section}>
       <div className={`${styles.banner_inner} ${inView ? styles.fadeInUp : ''}`}>
         <Image alt='tooth' className={styles.image} height={394} src={image} width={387} />
 

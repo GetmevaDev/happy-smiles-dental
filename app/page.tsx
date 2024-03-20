@@ -24,6 +24,7 @@ export default async function Page() {
         title={data?.attributes?.Block?.title}
         video={data?.attributes?.video?.data?.attributes?.url}
       />
+
       <Block
         description={data?.attributes?.Banner?.description}
         image={data?.attributes?.Banner?.image?.data?.attributes?.url}

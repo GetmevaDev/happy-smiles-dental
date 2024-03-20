@@ -28,7 +28,7 @@ export default async function RootLayout({
         <div className='wrapper'>
           <Layout.Header categories={categories?.data} data={data} />
 
-          <main className='container'>{children}</main>
+          <main>{children}</main>
           <Layout.Footer data={data} />
         </div>
       </body>

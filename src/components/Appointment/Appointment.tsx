@@ -9,6 +9,8 @@ import React, { useRef } from 'react';
 
 import { Button } from '@/ui/button/button';
 
+import { VideoBackground } from '../VideoBackground/VideoBackground';
+
 import styles from './Appointment.module.scss';
 
 interface AppointmentProps {
@@ -23,51 +25,39 @@ export const Appointment: FC<AppointmentProps> = ({ title, video, description, i
   const sectionRef = useRef(null);
 
   return (
-    <section className={styles.appointment}>
-      <div className={styles.info}>
-        <h1 className={styles.title}>
-          Happy Smiles Dental <div>New Hyde </div>
-        </h1>
+    <div className={styles.appointment_inner}>
+      <div className={styles.video}>{video && <VideoBackground video={video} />}</div>
 
-        <div className={styles.description}>{description}</div>
+      <div className={styles.info_block}>
+        <div className={styles.info}>
+          <h1 className={styles.title}>
+            Happy Smiles Dental <div>New Hyde </div>
+          </h1>
 
-        <div className={styles.make}>
-          <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
-            <Button>Make an appointment</Button>
-          </Link>
+          <div className={styles.description}>{description}</div>
 
-          <div className={styles.phone}>
-            <div className={styles.bg_phone}>
-              <Image alt='phone' height={24} src='/phone.svg' width={24} />
-            </div>
+          <div className={styles.make}>
+            <Link href='https://app.nexhealth.com/appt/happy-smiles-dental'>
+              <Button>Make an appointment</Button>
+            </Link>
 
-            <div className={styles.text}>
-              <a className={styles.call} href={`tel: ${phone}`}>
-                Click to call
-              </a>
-              <div className={styles.number}>
-                <a href={`tel: ${phone}`}>{phone}</a>
+            <div className={styles.phone}>
+              <div className={styles.bg_phone}>
+                <Image alt='phone' height={24} src='/phone.svg' width={24} />
+              </div>
+
+              <div className={styles.text}>
+                <a className={styles.call} href={`tel: ${phone}`}>
+                  Click to call
+                </a>
+                <div className={styles.number}>
+                  <a href={`tel: ${phone}`}>{phone}</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className={styles.image_inner}>
-        <video
-          autoPlay
-          className={styles.videoBackground}
-          loop
-          muted
-          playsInline
-          preload='auto'
-          // poster='/tech.png'
-        >
-          <source src={video} type='video/mp4' />
-        </video>
-
-        {/* <Image alt='tooth' className={styles.image} height={502} src={image} width={501} /> */}
-      </div>
-    </section>
+    </div>
   );
 };
