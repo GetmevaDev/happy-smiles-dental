@@ -55,8 +55,8 @@ export function generateSeoMetaData(data: Data) {
     openGraph: {
       title: data?.attributes?.seo?.metaTitle,
       description: data?.attributes?.seo?.metaDescription,
-      url: 'http://localhost:3000/',
-      siteName: 'Happy smiles dental',
+      url: '',
+      siteName: 'Cosmetic & Implant Dentist: New Hyde Park, NY',
       locale: 'en_US',
       type: 'website',
       images: [
