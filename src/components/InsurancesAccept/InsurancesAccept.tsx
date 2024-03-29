@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
 
@@ -22,7 +23,7 @@ export const InsurancesAccept: FC<{ title: string; cards: InsuranceCard[] }> = (
           key={card.id}
           className={classNames(styles.card, `${index % 2 === 0 ? styles.even : styles.odd}`)}
         >
-          {card.title}
+          <Link href={card.path ? card.path : '/404'}> {card.title}</Link>
         </div>
       ))}
     </div>

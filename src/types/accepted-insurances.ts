@@ -49,4 +49,5 @@ export interface Insurances {
 export interface InsuranceCard {
   id: number;
   title: string;
+  path?: string;
 }
