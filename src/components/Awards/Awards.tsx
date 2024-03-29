@@ -57,7 +57,7 @@ export const Awards: FC<{ title: string; cards: ClinicAward[] }> = ({ title, car
               <SwiperSlide key={card.id}>
                 <div className={styles.card}>
                   <Image
-                    alt='image'
+                    alt={card?.image?.data?.attributes?.alternativeText}
                     className={styles.image}
                     height={162}
                     src={card.image.data?.attributes.url}

@@ -23,7 +23,11 @@ export const Gray: FC<GrayProps> = ({ button, title, subTitle, image, descriptio
     <div className={styles.block}>
       <div className={styles.left}>
         <Image
-          alt='tooth'
+          alt={
+            image?.data?.attributes?.alternativeText
+              ? image?.data?.attributes?.alternativeText
+              : 'gray'
+          }
           className={styles.image}
           height={image.data.attributes.height}
           src={image.data.attributes.url}

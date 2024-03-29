@@ -21,6 +21,7 @@ export interface PostPageAttributes {
       attributes: {
         name: string;
         url: string;
+        alternativeText: string;
       };
     };
   };

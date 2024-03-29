@@ -52,7 +52,11 @@ export const ClinicGallery: FC<{ images: ClinicImage[] }> = ({ images }) => {
               <SwiperSlide key={image.id}>
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                   <Image
-                    alt='gallery'
+                    alt={
+                      image?.attributes?.alternativeText
+                        ? image?.attributes?.alternativeText
+                        : 'gallery'
+                    }
                     className={styles.image}
                     height={400}
                     src={image?.attributes?.url}

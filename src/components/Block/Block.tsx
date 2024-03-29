@@ -13,9 +13,10 @@ interface BlockProps {
   title?: string;
   description?: ContentBlock[];
   image: string;
+  alternativeText: string;
 }
 
-export const Block: FC<BlockProps> = ({ title, description, image }) => {
+export const Block: FC<BlockProps> = ({ title, description, image, alternativeText }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -23,7 +24,13 @@ export const Block: FC<BlockProps> = ({ title, description, image }) => {
   return (
     <section ref={ref} className={styles.section}>
       <div className={`${styles.banner_inner} ${inView ? styles.fadeInUp : ''}`}>
-        <Image alt='tooth' className={styles.image} height={394} src={image} width={387} />
+        <Image
+          alt={alternativeText}
+          className={styles.image}
+          height={394}
+          src={image}
+          width={387}
+        />
 
         <div className={styles.block}>
           <h2 className={styles.title}>{title}</h2>

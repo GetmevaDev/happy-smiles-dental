@@ -16,10 +16,12 @@ export default async function Page() {
   return (
     <div>
       <Banner
+        alternativeText={data?.attributes?.banner?.bgImage?.data?.attributes?.alternativeText}
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         title={data?.attributes?.banner?.title}
       />
       <Brightness
+        alternativeText={data?.attributes?.blockTop?.image?.data?.attributes?.alternativeText}
         description={data?.attributes?.blockTop?.description}
         height={420}
         image={data?.attributes?.blockTop?.image?.data.attributes?.url}

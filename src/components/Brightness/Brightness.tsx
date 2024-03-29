@@ -14,6 +14,7 @@ interface BrightnessProps {
   width?: number;
   background?: boolean;
   height?: number;
+  alternativeText?: string;
 }
 
 export const Brightness: FC<BrightnessProps> = ({
@@ -23,6 +24,7 @@ export const Brightness: FC<BrightnessProps> = ({
   image,
   width,
   background,
+  alternativeText,
   height
 }) => (
   <section className={styles.section}>
@@ -40,7 +42,13 @@ export const Brightness: FC<BrightnessProps> = ({
     <div className={background ? styles.background_right : styles.right}>
       {image && (
         <div className={styles.image_inner}>
-          <Image alt='tooth' className={styles.image} height={height} src={image} width={width} />
+          <Image
+            alt={alternativeText || 'tooth'}
+            className={styles.image}
+            height={height}
+            src={image}
+            width={width}
+          />
           {/* <div className={styles.circle} /> */}
         </div>
       )}

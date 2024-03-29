@@ -43,6 +43,7 @@ export interface ClinicAward {
       id: number;
       attributes: {
         url: string;
+        alternativeText: string;
       };
     };
   };
@@ -62,6 +63,7 @@ export interface Image {
     name: string;
     url: string;
     width: number;
+    alternativeText?: string;
     height: number;
   };
 }

@@ -30,6 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <Banner
+        alternativeText={data?.attributes?.bgImage?.data?.attributes?.alternativeText}
         buttonBack
         image={data?.attributes?.bgImage?.data?.attributes?.url}
         title={data?.attributes?.title}

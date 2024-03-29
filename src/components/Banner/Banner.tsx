@@ -14,12 +14,27 @@ interface BannerProps {
   image?: string;
   button?: boolean;
   buttonBack?: boolean;
+  alternativeText?: string;
 }
 
-export const Banner: FC<BannerProps> = ({ title, subTitle, button, image, buttonBack }) => (
+export const Banner: FC<BannerProps> = ({
+  title,
+  subTitle,
+  button,
+  image,
+  buttonBack,
+  alternativeText
+}) => (
   <section className={styles.section}>
     <div className={styles.image_inner}>
-      {image && <Image alt='banner' className={styles.image} layout='fill' src={image} />}
+      {image && (
+        <Image
+          alt={alternativeText || 'banner'}
+          className={styles.image}
+          layout='fill'
+          src={image}
+        />
+      )}
       <div className={styles.container}>
         <div className={styles.titles}>
           <Typography size='mini' tag='h4'>

@@ -31,7 +31,11 @@ export const White: FC<WhiteProps> = ({ title, subTitle, description, image }) =
 
     <div className={styles.right}>
       <Image
-        alt='tooth'
+        alt={
+          image?.data?.attributes?.alternativeText
+            ? image?.data?.attributes?.alternativeText
+            : 'white'
+        }
         className={styles.image}
         height={image.data.attributes.height}
         src={image.data.attributes.url}

@@ -19,6 +19,7 @@ export default async function Page() {
   return (
     <div>
       <Banner
+        alternativeText={data?.attributes?.banner?.bgImage?.data?.attributes?.alternativeText}
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
         title={data?.attributes?.banner?.title}
@@ -44,7 +45,7 @@ export default async function Page() {
         title={data?.attributes?.MeetTheDoctor?.title}
       />
 
-      <ClinicGallery images={data?.attributes?.ClinicGallery?.images.data} />
+      <ClinicGallery images={data?.attributes?.ClinicGallery?.images?.data} />
 
       <LeaveForm review={data?.attributes?.Review} />
     </div>

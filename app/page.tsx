@@ -26,6 +26,7 @@ export default async function Page() {
       />
 
       <Block
+        alternativeText={data?.attributes?.Banner?.image?.data?.attributes?.alternativeText}
         description={data?.attributes?.Banner?.description}
         image={data?.attributes?.Banner?.image?.data?.attributes?.url}
         title={data?.attributes?.Banner?.title}

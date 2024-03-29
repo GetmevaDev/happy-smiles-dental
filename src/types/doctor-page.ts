@@ -21,6 +21,7 @@ export interface DoctorPageAttributes {
         name: string;
         width: number;
         height: number;
+        alternativeText: string;
       };
     };
   };

@@ -8,12 +8,14 @@ export default async function Page() {
   return (
     <div>
       <Banner
+        alternativeText={data?.attributes?.banner?.bgImage?.data?.attributes?.alternativeText}
         button={data?.attributes?.banner?.button}
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
         title={data?.attributes?.banner?.title}
       />
       <Brightness
+        alternativeText={data?.attributes?.image?.data?.attributes?.alternativeText}
         background
         description={data?.attributes?.description}
         height={501}

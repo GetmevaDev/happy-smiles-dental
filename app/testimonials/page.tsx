@@ -17,6 +17,7 @@ export default async function Page() {
   return (
     <div>
       <Banner
+        alternativeText={data?.attributes?.banner?.bgImage?.data?.attributes?.alternativeText}
         image={data?.attributes?.banner?.bgImage?.data?.attributes?.url}
         subTitle={data?.attributes?.banner?.subTitle}
         title={data?.attributes?.banner?.title}
