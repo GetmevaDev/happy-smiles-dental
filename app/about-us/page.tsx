@@ -40,6 +40,8 @@ export default async function Page() {
       />
 
       <MeetOurTeam
+        image={data?.attributes?.MeetTheDoctor?.image?.data?.attributes?.url}
+        alternativeText={data?.attributes?.MeetTheDoctor?.image?.data?.attributes?.alternativeText}
         doctorSpeciality={data?.attributes?.MeetTheDoctor?.doctorSpeciality}
         name={data?.attributes?.MeetTheDoctor?.name}
         title={data?.attributes?.MeetTheDoctor?.title}

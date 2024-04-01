@@ -7,10 +7,20 @@ import { Typography } from '@/ui';
 
 import styles from './MeetOurTeam.module.scss';
 
-export const MeetOurTeam: FC<{ title: string; doctorSpeciality: string; name: string }> = ({
+interface MeetOurTeamProps {
+  title: string;
+  doctorSpeciality: string;
+  name: string;
+  image: string;
+  alternativeText: string;
+}
+
+export const MeetOurTeam: FC<MeetOurTeamProps> = ({
   title,
   name,
-  doctorSpeciality
+  doctorSpeciality,
+  image,
+  alternativeText
 }) => (
   <div className={styles.meet}>
     <Typography className={styles.title} tag='h2'>
@@ -19,7 +29,13 @@ export const MeetOurTeam: FC<{ title: string; doctorSpeciality: string; name: st
 
     <div className={styles.card}>
       <div className={styles.card_inner}>
-        <Image alt='doctor' className={styles.image} height={500} src='/dc-2.png' width={800} />
+        <Image
+          alt={alternativeText}
+          className={styles.image}
+          height={500}
+          src={image}
+          width={800}
+        />
 
         <Link className={styles.doctor} href='/doctor-of-dental-surgery'>
           <div className={styles.text}>

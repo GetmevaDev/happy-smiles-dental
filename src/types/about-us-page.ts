@@ -24,7 +24,9 @@ export interface AboutUsPageAttributes {
 export interface MeetTheDoctor {
   id: number;
   title: string;
-  image: Image;
+  image: {
+    data: Image;
+  };
   name: string;
   doctorSpeciality: string;
 }
@@ -63,7 +65,7 @@ export interface Image {
     name: string;
     url: string;
     width: number;
-    alternativeText?: string;
+    alternativeText: string;
     height: number;
   };
 }
