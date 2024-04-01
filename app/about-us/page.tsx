@@ -28,10 +28,10 @@ export default async function Page() {
       <Brightness
         background
         description={data?.attributes?.block?.description}
-        height={497}
-        image='/dr.png'
+        height={data?.attributes?.block?.image?.data?.attributes?.height}
+        image={data?.attributes?.block?.image?.data?.attributes?.url}
         title={data?.attributes?.block?.title}
-        width={290}
+        width={data?.attributes?.block?.image?.data?.attributes?.width}
       />
 
       <Awards
