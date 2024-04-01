@@ -46,7 +46,7 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
                           : `services/${el?.attributes?.slug}`
                       }
                     >
-                      {el?.attributes?.title}
+                      {el?.attributes?.otherTitle || el?.attributes?.title}
                     </Link>
                   </li>
                 ))}

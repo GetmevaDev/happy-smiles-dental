@@ -31,6 +31,7 @@ export interface NavigationMenuService {
   id: number;
   attributes: {
     title: string;
+    otherTitle?: string;
     service_category: {
       data: ServiceCategory;
     };
