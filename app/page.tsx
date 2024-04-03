@@ -23,6 +23,7 @@ export default async function Page() {
         phone={data?.attributes?.Block?.phone}
         title={data?.attributes?.Block?.title}
         video={data?.attributes?.video?.data?.attributes?.url}
+        mobileVideo={data?.attributes?.mobileVideo?.data?.attributes?.url}
       />
 
       <Block

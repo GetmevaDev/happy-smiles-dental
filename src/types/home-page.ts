@@ -24,6 +24,14 @@ export interface HomePageI {
     };
   };
 
+  mobileVideo: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
+
   ChooseBlock: ChooseBlock;
   OurServices: {
     id: number;

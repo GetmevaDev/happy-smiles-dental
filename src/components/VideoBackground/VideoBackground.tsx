@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 
 import styles from './VideoBackground.module.scss';
 
-export const VideoBackground: FC<{ video: string; isFullScreen?: boolean }> = memo(
+const VideoBackground: FC<{ video: string; isFullScreen?: boolean }> = memo(
   ({ video, isFullScreen }) => (
     <div className={styles.video_background}>
       <video
@@ -20,3 +20,5 @@ export const VideoBackground: FC<{ video: string; isFullScreen?: boolean }> = me
     </div>
   )
 );
+
+export default VideoBackground;
