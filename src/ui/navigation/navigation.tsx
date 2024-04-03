@@ -46,8 +46,8 @@ export const Navigation: FC<NavigationProps> = ({ data, categories }) => {
                           : `services/${el?.attributes?.slug}`
                       }
                     >
-                      {el?.attributes?.title.includes('Specialist Near Me')
-                        ? el?.attributes?.title.replace(/ Specialist Near Me/g, '')
+                      {el?.attributes?.title.includes('Specialist Near New Hype Park')
+                        ? el?.attributes?.title.replace(/ Specialist Near New Hype Park/g, '')
                         : el?.attributes?.title}
                     </Link>
                   </li>
