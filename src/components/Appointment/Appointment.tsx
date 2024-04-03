@@ -1,19 +1,18 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-
 'use client';
 
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
-import React, { memo, useRef, useState } from 'react';
+import React, { memo } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 import { Button } from '@/ui/button/button';
-const VideoBackground = dynamic(() => import('../VideoBackground/VideoBackground'));
+import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 import styles from './Appointment.module.scss';
-import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
-import dynamic from 'next/dynamic';
+
+const VideoBackground = dynamic(() => import('../VideoBackground/VideoBackground'));
 
 interface AppointmentProps {
   title?: string;
@@ -56,8 +55,8 @@ export const Appointment: FC<AppointmentProps> = memo(
 
             <div className={styles.make}>
               <Link
-                href='https://app.nexhealth.com/appt/happy-smiles-dental'
                 className={styles.link_phone}
+                href='https://app.nexhealth.com/appt/happy-smiles-dental'
               >
                 <Button>Make an appointment</Button>
               </Link>
