@@ -28,6 +28,7 @@ export const Appointment: FC<AppointmentProps> = memo(
     const handle = useFullScreenHandle();
 
     const query = useMediaQuery('(min-width: 480px)');
+    const smDesktopWidthQuery = useMediaQuery('(min-width: 1080px)');
 
     return (
       <div className={styles.appointment_inner}>
@@ -45,11 +46,15 @@ export const Appointment: FC<AppointmentProps> = memo(
 
         <div className={styles.info_block}>
           <div className={styles.info}>
-            <h1 className={styles.title}>
-              Happy Smiles <br />
-              Dental In New <br />
-              Hype Park
-            </h1>
+            {smDesktopWidthQuery ? (
+              <h1 className={styles.title}>
+                Happy Smiles <br />
+                Dental In New <br />
+                Hype Park
+              </h1>
+            ) : (
+              <h1 className={styles.title}>Happy Smiles Dental In New Hype Park</h1>
+            )}
 
             <div className={styles.description}>{description}</div>
 

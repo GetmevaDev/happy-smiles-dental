@@ -8,7 +8,7 @@
 .info {
   padding-top: 10px;
   position: absolute;
-  top: 70%;
+  top: 69%;
   right: 10%;
 
   transform: translate(0, -50%);
@@ -137,9 +137,28 @@
   gap: 3px;
 }
 
+@media (max-width: 1600px) {
+  .info {
+    top: 46%;
+  }
+}
+
 @media (max-width: $smDesktopWidth) {
   .appointment {
     flex-direction: column-reverse;
+  }
+
+  .info {
+    top: 40%;
+  }
+
+  .title {
+    font-size: 60px;
+    padding-bottom: 30px;
+  }
+
+  .description {
+    padding-bottom: 20px;
   }
 
   .image_inner {
@@ -182,7 +201,7 @@
 
 @media (max-width: $smPhoneWidth) {
   .info {
-    top: 45%;
+    top: 60%;
   }
 }
 
