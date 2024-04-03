@@ -10,8 +10,8 @@ const VideoBackground: FC<{ video: string; isFullScreen?: boolean; query?: boole
         autoPlay
         className={styles.video}
         controls={query || isFullScreen}
+        controlsList='nodownload'
         loop
-        muted
         playsInline
         poster='/poster.jpg'
         preload='auto'
