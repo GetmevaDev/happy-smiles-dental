@@ -181,6 +181,12 @@
   }
 }
 
+@media (max-width: $smPhoneWidth) {
+  .info {
+    top: 45%;
+  }
+}
+
 @media (max-width: $phoneWidth) {
   .appointment {
     margin-top: 100px;

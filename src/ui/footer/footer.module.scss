@@ -223,3 +223,15 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: $phoneWidth) {
+  .buttons {
+    .link_white {
+      font-size: 12px;
+    }
+
+    .link {
+      font-size: 12px;
+    }
+  }
+}
