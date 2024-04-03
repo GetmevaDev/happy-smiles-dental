@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import type { FC } from 'react';
 import React, { memo } from 'react';
 
