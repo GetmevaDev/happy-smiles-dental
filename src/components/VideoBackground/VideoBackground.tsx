@@ -3,13 +3,13 @@ import React, { memo } from 'react';
 
 import styles from './VideoBackground.module.scss';
 
-const VideoBackground: FC<{ video: string; isFullScreen?: boolean }> = memo(
-  ({ video, isFullScreen }) => (
+const VideoBackground: FC<{ video: string; isFullScreen?: boolean; query?: boolean }> = memo(
+  ({ video, isFullScreen, query }) => (
     <div className={styles.video_background}>
       <video
         autoPlay
         className={styles.video}
-        controls={isFullScreen}
+        controls={query || isFullScreen}
         loop
         muted
         playsInline

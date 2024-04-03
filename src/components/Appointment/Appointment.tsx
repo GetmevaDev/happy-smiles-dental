@@ -40,7 +40,7 @@ export const Appointment: FC<AppointmentProps> = memo(
         </div>
 
         {!query && mobileVideo && (
-          <VideoBackground isFullScreen={handle.active} video={mobileVideo} />
+          <VideoBackground isFullScreen={handle.active} query={!query} video={mobileVideo} />
         )}
 
         <div className={styles.info_block}>
