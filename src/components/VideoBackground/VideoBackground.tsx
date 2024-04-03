@@ -13,7 +13,7 @@ const VideoBackground: FC<{ video: string; isFullScreen?: boolean; query?: boole
         controls={query || isFullScreen}
         controlsList='nodownload'
         loop
-        muted={!query}
+        muted
         playsInline
         poster='/poster.jpg'
         preload='auto'
