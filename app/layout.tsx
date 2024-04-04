@@ -8,6 +8,9 @@ import type { RooutObjectNavigation } from '@/types/navigation';
 import type { ServiceCategory } from '@/types/service-page';
 import { Layout } from '@/ui';
 import { fetchAPI } from '@/utils/api/fetchApi';
+import Script from 'next/script';
+
+import jsonData from '../data.json';
 
 export const mont = Montserrat({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -29,7 +32,11 @@ export default async function RootLayout({
       <link href='/favicon.png' rel='icon' />
       <body>
         <GoogleTagManager gtmId='GTM-NCH9NS93' />
-
+        <Script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonData) }}
+          id=''
+          type='application/ld+json'
+        />
         <noscript>
           <iframe
             height='0'

@@ -50,8 +50,7 @@ export const Appointment: FC<AppointmentProps> = memo(
                   {smDesktopWidthQuery ? (
                     <h1 className={styles.title}>
                       Happy Smiles <br />
-                      Dental In New <br />
-                      Hype Park
+                      Dental In New Hyde Park
                     </h1>
                   ) : (
                     <h1 className={styles.title}>Happy Smiles Dental In New Hype Park</h1>
