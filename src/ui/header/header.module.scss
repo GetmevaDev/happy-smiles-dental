@@ -65,6 +65,10 @@
   .header_inner {
     flex-direction: column;
   }
+
+  .header {
+    position: absolute;
+  }
 }
 
 @media (max-width: $tableWidth) {
