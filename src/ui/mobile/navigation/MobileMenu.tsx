@@ -109,7 +109,12 @@ export const MobileMenu: FC<{ data: NavigationData[]; categories: ServiceCategor
                                 }
                                 onClick={closeMenu}
                               >
-                                {el?.attributes?.title}
+                                {el?.attributes?.title.includes('Specialist Near New Hype Park')
+                                  ? el?.attributes?.title.replace(
+                                      / Specialist Near New Hype Park/g,
+                                      ''
+                                    )
+                                  : el?.attributes?.title}
                               </Link>
                             </li>
                           ))}
