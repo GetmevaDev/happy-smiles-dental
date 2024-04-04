@@ -8,7 +8,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata() {
   const { data } = await fetchAPI<TestimonialsPageRoot>('testimonials-page');
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, 'testimonials');
 }
 export default async function Page() {
   const { data } = await fetchAPI<TestimonialsPageRoot>('testimonials-page');

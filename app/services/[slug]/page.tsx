@@ -9,7 +9,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { data } = await fetchAPI<RootServicePage>(`services/find-by-slug/${params.slug}`);
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, `services/${params.slug}`);
 }
 
 export async function generateStaticParams() {

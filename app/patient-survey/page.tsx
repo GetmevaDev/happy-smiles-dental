@@ -6,7 +6,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata() {
   const { data } = await fetchAPI<PatientSurveyRoot>('patient-survey-page');
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, 'patient-survey');
 }
 
 export default async function Page() {

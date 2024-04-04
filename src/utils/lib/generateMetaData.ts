@@ -16,15 +16,14 @@ interface Data {
   };
 }
 
-export function generateSeoMetaData(data: Data) {
+export function generateSeoMetaData(data: Data, path?: string) {
   return {
     title: data?.attributes?.seo?.metaTitle,
     description: data?.attributes?.seo?.metaDescription,
     alternates: {
-      canonical: '/',
+      canonical: `https://drdianagerov.com/${path || ''}`,
       languages: {
-        'en-US': '/en-US',
-        'de-DE': '/de-DE'
+        'en-US': '/en-US'
       }
     },
     verification: {
@@ -63,7 +62,6 @@ export function generateSeoMetaData(data: Data) {
     openGraph: {
       title: data?.attributes?.seo?.metaTitle,
       description: data?.attributes?.seo?.metaDescription,
-      url: '',
       siteName: 'Cosmetic & Implant Dentist: New Hyde Park, NY',
       locale: 'en_US',
       type: 'website',

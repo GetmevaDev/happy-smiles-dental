@@ -6,7 +6,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata() {
   const { data } = await fetchAPI<AcceptedInsuranceRoot>('accepted-insurances-page');
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, 'accepted-insurances');
 }
 
 export default async function Page() {

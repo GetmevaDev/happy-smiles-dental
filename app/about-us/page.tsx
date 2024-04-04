@@ -10,7 +10,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata() {
   const { data } = await fetchAPI<RootAboutUsPage>('about-us-page');
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, 'about-us');
 }
 
 export default async function Page() {
@@ -40,9 +40,9 @@ export default async function Page() {
       />
 
       <MeetOurTeam
-        image={data?.attributes?.MeetTheDoctor?.image?.data?.attributes?.url}
         alternativeText={data?.attributes?.MeetTheDoctor?.image?.data?.attributes?.alternativeText}
         doctorSpeciality={data?.attributes?.MeetTheDoctor?.doctorSpeciality}
+        image={data?.attributes?.MeetTheDoctor?.image?.data?.attributes?.url}
         name={data?.attributes?.MeetTheDoctor?.name}
         title={data?.attributes?.MeetTheDoctor?.title}
       />

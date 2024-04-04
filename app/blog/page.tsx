@@ -11,7 +11,7 @@ export const dynamic = 'force-static';
 export async function generateMetadata() {
   const { data } = await fetchAPI<RootHomePageI>('blog-page');
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, 'blog');
 }
 
 export async function generateStaticParams() {

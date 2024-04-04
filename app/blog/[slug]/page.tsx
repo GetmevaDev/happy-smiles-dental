@@ -8,7 +8,7 @@ import { generateSeoMetaData } from '@/utils/lib/generateMetaData';
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { data } = await fetchAPI<PostPageRoot>(`posts/find-by-slug/${params.slug}`);
 
-  return generateSeoMetaData(data);
+  return generateSeoMetaData(data, `blog/${params.slug}`);
 }
 
 export async function generateStaticParams() {
