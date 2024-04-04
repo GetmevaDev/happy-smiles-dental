@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://localhost:3000/',
+  siteUrl: 'https://drdianagerov.com/',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   generateIndexSitemap: false

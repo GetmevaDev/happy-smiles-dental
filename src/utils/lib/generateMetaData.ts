@@ -20,7 +20,13 @@ export function generateSeoMetaData(data: Data) {
   return {
     title: data?.attributes?.seo?.metaTitle,
     description: data?.attributes?.seo?.metaDescription,
-
+    alternates: {
+      canonical: '/',
+      languages: {
+        'en-US': '/en-US',
+        'de-DE': '/de-DE'
+      }
+    },
     verification: {
       google: 'google',
       yandex: 'yandex',
@@ -40,12 +46,14 @@ export function generateSeoMetaData(data: Data) {
     },
 
     robots: {
-      index: false,
+      index: true,
       follow: true,
-      nocache: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
       googleBot: {
         index: true,
-        follow: false,
+        follow: true,
         noimageindex: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',
