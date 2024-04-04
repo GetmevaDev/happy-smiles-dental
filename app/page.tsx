@@ -20,10 +20,10 @@ export default async function Page() {
       <Appointment
         description={data?.attributes?.Block?.description}
         image={data?.attributes?.Block?.image?.data?.attributes?.url}
+        mobileVideo={data?.attributes?.mobileVideo?.data?.attributes?.url}
         phone={data?.attributes?.Block?.phone}
         title={data?.attributes?.Block?.title}
         video={data?.attributes?.video?.data?.attributes?.url}
-        mobileVideo={data?.attributes?.mobileVideo?.data?.attributes?.url}
       />
 
       <Block
