@@ -29,8 +29,16 @@ export const Footer: FC<{ data: NavigationData[] }> = ({ data }) => {
           </div>
         </div>
         <div className={styles.social}>
-          <Image alt='facebook' height={32} src='/facebook.svg' width={32} />
-          <Image alt='instagramm' height={32} src='/instagram.svg' width={32} />
+          <a href='https://www.facebook.com/DrDianaGerov' rel='noopener noreferrer' target='_blank'>
+            <Image alt='facebook' height={32} src='/facebook.svg' width={32} />
+          </a>{' '}
+          <a
+            href='https://www.instagram.com/drdianagerov'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            <Image alt='instagramm' height={32} src='/instagram.svg' width={32} />
+          </a>
         </div>
 
         <div className={styles.meva}>
